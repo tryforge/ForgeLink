@@ -1,0 +1,24 @@
+{
+  "devDependencies": {
+    "@types/node": "^20.5.9",
+    "discord.js": "^14.13.0",
+    "dotenv": "^16.3.1",
+    "forgescript": "github:tryforge/ForgeScript",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "rawrlink": "^1.0.6"
+  },
+  "name": "lavaforge",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "preinstall": "tsc",
+    "test": "tsc && node dist/__tests__/runner"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
