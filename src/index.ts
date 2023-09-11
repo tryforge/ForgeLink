@@ -1,8 +1,9 @@
-import { EventManager, ForgeClient, ForgeExtension, FunctionManager, ICommand } from "forgescript";
+import { EventManager, ForgeClient, ForgeExtension, FunctionManager } from "forgescript";
 import { NekoLavalinkManager } from "rawrlink"
 import { LavalinkOpCodes } from "rawrlink/dist/typings/enums/LavalinkOpCodes";
 import { ILavalinkNodeData } from "rawrlink/dist/typings/interfaces/ILavalinkNodeData";
 import { VoiceStateUpdateHandle } from "rawrlink/dist/typings/types/VoiceStateUpdateHandle";
+import { LavalinkCommandManager } from "./structures/LavalinkCommandManager";
 
 export interface ILavalinkCommand {
     type: LavalinkOpCodes
@@ -24,6 +25,7 @@ export class LavaForge extends ForgeExtension {
     description: string = "Very efficient lavalink wrapper for forge"
     version: string = "1.0.0"
 
+    public commands!: LavalinkCommandManager
     public client!: ForgeClient
     public manager!: NekoLavalinkManager
 
@@ -31,18 +33,9 @@ export class LavaForge extends ForgeExtension {
         super()
     }
 
-    addCommand(...commands: (ILavalinkCommand | ILavalinkCommand[])[]): void {
-        for (const cmd of commands) {
-            if (Array.isArray(cmd)) return this.addCommand(...cmd)
-            this.client.commands.add(cmd as unknown as ICommand)
-        }
-    }
-
-    getCommands(type: LavalinkOpCodes) {
-        return this.client.commands.getCustom<any>(type)
-    }
-
     init(client: ForgeClient): void {
+        this.commands = new LavalinkCommandManager(client)
+
         // Load events
         EventManager.load(LavalinkEventStorage, `${__dirname}/events`)
         
@@ -55,6 +48,9 @@ export class LavaForge extends ForgeExtension {
         
         client.lavalink = this
         LavaForge.Instance = this
+        
+        // Load events specified in client options
+        client.events.load(LavalinkEventStorage, ...(this.options.events ?? []))
 
         // @ts-ignore
         client.on('raw', d => LavaForge.Instance.manager.updateVoiceData(d))

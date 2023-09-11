@@ -8,7 +8,7 @@ export default new LavalinkEventHandler(
         name: LavalinkOpCodes.Ready,
         description: "Emitted when a lavalink node becomes operational",
         listener(node, data) {
-            const commands = LavaForge.Instance.getCommands(LavalinkOpCodes.Ready)
+            const commands = LavaForge.Instance.commands.get(LavalinkOpCodes.Ready)
             
             if (commands?.length) {
                 for (const cmd of commands) {

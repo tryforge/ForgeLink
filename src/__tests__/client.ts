@@ -60,7 +60,7 @@ console.log(
     "Started"
 )
 
-lava.addCommand({
+lava.commands.add({
     type: LavalinkOpCodes.Ready,
     code: "$log[uwu]"
 })
