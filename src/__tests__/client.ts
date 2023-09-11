@@ -65,12 +65,6 @@ lava.commands.add({
     code: "$log[uwu]"
 })
 
-client.functions.add(
-    "get_user",
-    [ "id" ],
-    "$return[$username[$env[id]]]"
-)
-
 client.commands.add({
     type: Events.GuildAuditLogEntryCreate,
     code: `
