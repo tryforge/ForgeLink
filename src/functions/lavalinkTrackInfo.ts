@@ -1,4 +1,4 @@
-import { ArgType, NativeFunction, Return } from "forgescript";
+import { ArgType, NativeFunction } from "@tryforge/forgescript";
 import { NekoTrack } from "rawrlink";
 
 export default new NativeFunction({
@@ -23,8 +23,8 @@ export default new NativeFunction({
     ],
     execute(ctx, [ index, prop ]) {
         const track = (Reflect.get(ctx, "tracks") as NekoTrack[] | undefined)?.[index]
-        if (!track) return Return.success()
+        if (!track) return this.success()
 
-        return Return.success(track.data.info[prop])
+        return this.success(track.data.info[prop])
     },
 })

@@ -1,7 +1,5 @@
-import { ArgType, NativeFunction, Return } from "forgescript";
+import { ArgType, NativeFunction } from "@tryforge/forgescript";
 import { LavaForge } from "..";
-import { NekoLavalinkPlayerQueue } from "rawrlink";
-import { PlayerStateType } from "rawrlink/dist/typings/enums/PlayerStateType";
 
 export default new NativeFunction({
     name: "$lavalinkStop",
@@ -19,7 +17,7 @@ export default new NativeFunction({
     ],
     async execute(ctx, [ g ]) {
         const pl = LavaForge.Instance.manager.players.get(g.id)
-        if (!pl) return Return.success(false)
-        return Return.success(await pl.destroy())
+        if (!pl) return this.success(false)
+        return this.success(await pl.destroy())
     },
 })

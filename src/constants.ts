@@ -1,1 +1,1 @@
-export * from "forgescript"
+export * from "@tryforge/forgescript"

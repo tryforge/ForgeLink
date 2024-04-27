@@ -1,7 +1,7 @@
 import { LavalinkOpCodes } from "rawrlink/dist/typings/enums/LavalinkOpCodes";
 import { LavalinkEventHandler } from "../structures/LavalinkEventHandler";
 import { LavaForge } from "..";
-import { Interpreter } from "forgescript";
+import { Interpreter } from "@tryforge/forgescript";
 
 export default new LavalinkEventHandler(
     {

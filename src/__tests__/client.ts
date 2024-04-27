@@ -1,4 +1,4 @@
-import { ForgeClient } from "forgescript"
+import { ForgeClient } from "@tryforge/forgescript"
 import { config } from "dotenv"
 import { Events } from "discord.js"
 import { LavaForge } from ".."

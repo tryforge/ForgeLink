@@ -1,12 +1,12 @@
 {
   "devDependencies": {
+    "@tryforge/forgescript": "github:tryforge/ForgeScript",
     "@types/node": "^20.5.9",
     "discord.js": "^14.13.0",
     "dotenv": "^16.3.1",
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "forgescript": "github:tryforge/ForgeScript",
     "rawrlink": "^1.0.6"
   },
   "name": "lavaforge",

@@ -1,4 +1,4 @@
-import { ArgType, NativeFunction, Return } from "forgescript";
+import { ArgType, NativeFunction } from "@tryforge/forgescript";
 import { LavaForge } from "..";
 import { BaseChannel } from "discord.js";
 import { NekoLavalinkPlayerQueue, NekoTrack } from "rawrlink";
@@ -39,12 +39,12 @@ export default new NativeFunction({
     ],
     async execute(ctx, [ guild, voice, index, deaf ]) {
         const node = LavaForge.Instance.manager.getLeastUsedNode()
-        if (!node) return Return.success()
+        if (!node) return this.success()
         
         const tracks = (Reflect.get(ctx, "tracks") as NekoTrack[])
         const track = tracks?.[index!]
 
-        if ((index !== null && !track) || !tracks?.length) return Return.success()
+        if ((index !== null && !track) || !tracks?.length) return this.success()
 
         const pl = LavaForge.Instance.manager.player(node, guild.id)
         
@@ -56,6 +56,6 @@ export default new NativeFunction({
         else 
             queue.push(...tracks)
 
-        return Return.success(await queue.play())
+        return this.success(await queue.play())
     },
 })

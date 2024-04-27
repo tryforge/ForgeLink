@@ -1,5 +1,5 @@
-import { ArgType, NativeFunction, Return } from "forgescript";
-import { NekoLavalinkPlayerQueue, NekoTrack } from "rawrlink";
+import { ArgType, NativeFunction } from "@tryforge/forgescript";
+import { NekoLavalinkPlayerQueue } from "rawrlink";
 import { LavaForge } from "..";
 
 export default new NativeFunction({
@@ -25,11 +25,11 @@ export default new NativeFunction({
     brackets: true,
     execute(ctx, [ g, prop ]) {
         const pl = LavaForge.Instance.manager.players.get(g.id)
-        if (!pl) return Return.success()
+        if (!pl) return this.success()
 
         const track = (pl.queue as NekoLavalinkPlayerQueue).current
-        if (!track) return Return.success()
+        if (!track) return this.success()
 
-        return Return.success(track.data.info[prop])
+        return this.success(track.data.info[prop])
     },
 })

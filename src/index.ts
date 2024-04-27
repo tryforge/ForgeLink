@@ -1,4 +1,4 @@
-import { EventManager, ForgeClient, ForgeExtension, FunctionManager } from "forgescript";
+import { EventManager, ForgeClient, ForgeExtension } from "@tryforge/forgescript";
 import { NekoLavalinkManager } from "rawrlink"
 import { LavalinkOpCodes } from "rawrlink/dist/typings/enums/LavalinkOpCodes";
 import { ILavalinkNodeData } from "rawrlink/dist/typings/interfaces/ILavalinkNodeData";
@@ -40,7 +40,7 @@ export class LavaForge extends ForgeExtension {
         EventManager.load(LavalinkEventStorage, `${__dirname}/events`)
         
         // Load functions
-        FunctionManager.load(`${__dirname}/functions`)
+        this.load(`${__dirname}/functions`)
 
         // Convenience
         this.client = client

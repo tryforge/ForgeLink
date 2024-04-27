@@ -1,5 +1,4 @@
-import { BaseEventHandler, ForgeClient } from "forgescript";
-import { LavalinkOpCodes } from "rawrlink/dist/typings/enums/LavalinkOpCodes";
+import { BaseEventHandler, ForgeClient } from "@tryforge/forgescript";
 import { LavalinkManagerEvents } from "rawrlink/dist/typings/types/LavalinkManagerEvents";
 import { LavaForge } from "..";
 

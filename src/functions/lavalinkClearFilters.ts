@@ -1,7 +1,5 @@
-import { ArgType, NativeFunction, Return } from "forgescript";
+import { ArgType, NativeFunction } from "@tryforge/forgescript";
 import { LavaForge } from "..";
-import { NekoLavalinkPlayerQueue } from "rawrlink";
-import { PlayerStateType } from "rawrlink/dist/typings/enums/PlayerStateType";
 
 export default new NativeFunction({
     name: "$lavalinkClearFilters",
@@ -19,9 +17,9 @@ export default new NativeFunction({
     ],
     async execute(ctx, [ g ]) {
         const pl = LavaForge.Instance.manager.players.get(g.id)
-        if (!pl) return Return.success(false)
+        if (!pl) return this.success(false)
         pl.filters.clear()
         await pl.applyFilters()
-        return Return.success(true)
+        return this.success(true)
     },
 })

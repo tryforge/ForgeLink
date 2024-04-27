@@ -1,4 +1,4 @@
-import { ArgType, NativeFunction, Return } from "forgescript";
+import { ArgType, NativeFunction } from "@tryforge/forgescript";
 import { LavaForge } from "..";
 import noop from "../noop";
 
@@ -25,17 +25,17 @@ export default new NativeFunction({
     brackets: true,
     async execute(ctx, [ data, source ]) {
         const node = LavaForge.Instance.manager.getLeastUsedNode()
-        if (!node) return Return.success()
+        if (!node) return this.success()
         
         const search = await node.search({
             query: data,
             source: source || "ytsearch"
         }).catch(noop)
 
-        if (!search) return Return.success()
+        if (!search) return this.success()
 
         Reflect.set(ctx, "tracks", search.tracks)
 
-        return Return.success(search.loadType)
+        return this.success(search.loadType)
     },
 })
