@@ -3,8 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const forgescript_1 = require("@tryforge/forgescript");
 const ForgeLink_1 = require("../classes/structures/ForgeLink");
 exports.default = new forgescript_1.NativeFunction({
-    name: '$createPlayer',
-    description: 'Creates a new music player in the given guild.',
+    name: '$destroyPlayer',
+    description: 'Destroys a music player in the given guild.',
     brackets: true,
     unwrap: true,
     args: [

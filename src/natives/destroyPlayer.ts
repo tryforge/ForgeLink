@@ -3,8 +3,8 @@ import type { BaseChannel, VoiceBasedChannel } from 'discord.js'
 import { ForgeLink } from '@structures/ForgeLink'
 
 export default new NativeFunction({
-    name: '$createPlayer',
-    description: 'Creates a new music player in the given guild.',
+    name: '$destroyPlayer',
+    description: 'Destroys a music player in the given guild.',
     brackets: true,
     unwrap: true,
     args: [
