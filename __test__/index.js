@@ -1,8 +1,3 @@
-# ForgeLink
-
-Index.js Example
-
-```ts
 const { ForgeClient } = require('@tryforge/forgescript')
 const { ForgeLink } = require('../dist')
 process.loadEnvFile()
@@ -58,4 +53,4 @@ lavalink.commands.shoukaku.add({
     code: '$log[NODE "$env[name]" IS READY]'
 })
 
-client.login(process.env.TOKEN)```
+client.login(process.env.TOKEN)
