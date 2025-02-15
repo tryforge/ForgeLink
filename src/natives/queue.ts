@@ -1,6 +1,7 @@
 import { Arg, ArgType, NativeFunction } from '@tryforge/forgescript'
 import type { BaseChannel, VoiceBasedChannel } from 'discord.js'
 import { ForgeLink } from '@structures/ForgeLink'
+import { KazagumoQueue } from 'kazagumo'
 
 export default new NativeFunction({
     name: '$queue',
@@ -18,8 +19,6 @@ export default new NativeFunction({
 if (!player) return this.customError("No player found!");
 
 
-            player.queue.clear();
-        
-        return this.success();
+        return this.successJSON(player.queue.map(x => x.getRaw));
     }
 })
