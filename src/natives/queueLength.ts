@@ -5,7 +5,7 @@ import { ForgeLink } from '@structures/ForgeLink'
 export default new NativeFunction({
     name: '$queueLength',
     description: 'displays the queue length in a specific guild',
-    brackets: true,
+    brackets: false,
     unwrap: true,
     args: [
         Arg.requiredGuild('Guild ID', 'The ID of the guild '),
@@ -14,7 +14,7 @@ export default new NativeFunction({
     execute: async function(ctx, [guild]) {
         const kazagumo = ctx.client.getExtension(ForgeLink, true).kazagumo
 
-        const player = kazagumo.getPlayer(guild.id); 
+        const player = kazagumo.getPlayer((guild.id ?? ctx.guild.id)); 
 if (!player) return this.customError("No player found!");
 
 
