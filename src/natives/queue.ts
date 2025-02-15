@@ -19,6 +19,6 @@ export default new NativeFunction({
 if (!player) return this.customError("No player found!");
 
 
-        return this.successJSON(player.queue.map(x => x.getRaw));
+        return this.successJSON(player.data.entries);
     }
 })
