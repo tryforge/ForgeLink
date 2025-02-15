@@ -23,6 +23,6 @@ exports.default = new forgescript_1.NativeFunction({
             duration: track.length,
             url: track.uri
         }));
-        return this.successJSON({ guildId: guild, tracks: queue });
+        return this.successJSON({ guildId: guild.id, tracks: queue });
     }
 });

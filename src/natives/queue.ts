@@ -26,6 +26,6 @@ const queue = player.queue.map((track, index) => ({
     url: track.uri
 }));
 
-        return this.successJSON({ guildId: guild, tracks: queue });
+        return this.successJSON({ guildId: guild.id, tracks: queue });
     }
 })
