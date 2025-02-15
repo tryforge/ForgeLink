@@ -4,7 +4,8 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc && tsc-alias",
+    "build": "tsc -p tsconfig.json && tsc-alias -p tsconfig.json && node ./dist/docgen.js",
+    "rebuild": "tsc && tsc-alias",
     "test": "node __test__/index.js"
   },
   "keywords": [],
@@ -14,12 +15,14 @@
   "devDependencies": {
     "@tryforge/forgescript": "^2.2.0",
     "@types/node": "^22.13.1",
+    "ascii-table3": "^0.9.0",
     "discord.js": "^14.18.0",
     "shoukaku": "^4.1.1",
     "tsc-alias": "^1.8.10",
     "typescript": "^5.7.3"
   },
   "dependencies": {
-    "kazagumo": "^3.2.2"
+    "kazagumo": "^3.2.2",
+    "typedoc": "^0.27.7"
   }
 }
