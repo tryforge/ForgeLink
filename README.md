@@ -4,7 +4,7 @@ Index.js Example
 
 ```ts
 const { ForgeClient } = require('@tryforge/forgescript')
-const { ForgeLink } = require('../dist')
+const { ForgeLink } = require('@tryforge/forgelink')
 process.loadEnvFile()
 
 const lavalink = new ForgeLink({
