@@ -11,14 +11,21 @@ export default new NativeFunction({
     args: [
         Arg.requiredGuild('Guild ID', 'The ID of the guild '),
     ],
-    output: ArgType.String,
+    output: ArgType.Json,
     execute: async function(ctx, [guild]) {
         const kazagumo = ctx.client.getExtension(ForgeLink, true).kazagumo
 
         const player = kazagumo.getPlayer((guild.id ?? ctx.guild.id)); 
 if (!player) return this.customError("No player found!");
 
+const queue = player.queue.map((track, index) => ({
+    position: index + 1,
+    title: track.title,
+    author: track.author,
+    duration: track.length, 
+    url: track.uri
+}));
 
-        return this.successJSON(player.data.entries);
+        return this.successJSON({ guildId: guild, tracks: queue });
     }
 })
