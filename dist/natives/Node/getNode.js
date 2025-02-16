@@ -18,6 +18,6 @@ exports.default = new forgescript_1.NativeFunction({
             auth: node.info.lavaplayer,
             url: node.ws.url
         }));
-        return this.success();
+        return this.successJSON(nodes);
     }
 });

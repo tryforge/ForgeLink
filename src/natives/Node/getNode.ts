@@ -21,6 +21,6 @@ export default new NativeFunction({
 
        }))
 
-        return this.success()
+        return this.successJSON(nodes)
     }
 })
