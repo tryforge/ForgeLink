@@ -18,7 +18,18 @@ exports.default = new forgescript_1.NativeFunction({
             return this.customError("Kazagumo is not initialized.");
         if (!kazagumo.shoukaku)
             return this.customError("Shoukaku is not available.");
-        const resolvedNode = kazagumo.shoukaku.options.nodeResolver(kazagumo.shoukaku.nodes);
-        return this.successJSON(resolvedNode);
+        if (!kazagumo.shoukaku.nodes.size)
+            return this.customError("No available nodes.");
+        const nodes = await Promise.all(Array.from(kazagumo.shoukaku.nodes.values()).map(async (node) => {
+            const lavalinkInfo = await node.rest.getLavalinkInfo().catch(() => null);
+            return {
+                name: node.name,
+                state: node.state,
+                stats: node.stats,
+                address: lavalinkInfo?.version || "Unknown",
+                auth: node.rest.getLavalinkInfo,
+            };
+        }));
+        return this.successJSON({ nodes });
     }
 });
