@@ -22,8 +22,9 @@ export default new NativeFunction({
 
         const newNode = {
             name,
-            url: `${secure ? 'wss' : 'ws'}://${host}:${port}`,
+            url: `${host}:${port}`,
             auth,
+            secure
         }
         
         await kazagumo.shoukaku.addNode(newNode)

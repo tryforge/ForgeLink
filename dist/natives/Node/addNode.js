@@ -19,8 +19,9 @@ exports.default = new forgescript_1.NativeFunction({
         const kazagumo = ctx.client.getExtension(ForgeLink_1.ForgeLink, true).kazagumo;
         const newNode = {
             name,
-            url: `${secure ? 'wss' : 'ws'}://${host}:${port}`,
+            url: `${host}:${port}`,
             auth,
+            secure
         };
         await kazagumo.shoukaku.addNode(newNode);
         return this.success();
