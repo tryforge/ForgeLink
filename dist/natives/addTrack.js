@@ -12,7 +12,7 @@ exports.default = new forgescript_1.NativeFunction({
         forgescript_1.Arg.requiredString('Query', 'Search query.')
     ],
     output: forgescript_1.ArgType.String,
-    execute: async function (ctx, [guild, query]) {
+    execute: async function (ctx, [guild = ctx.guild, query]) {
         const kazagumo = ctx.client.getExtension(ForgeLink_1.ForgeLink, true).kazagumo;
         const player = kazagumo.getPlayer((guild.id ?? ctx.guild.id));
         if (!player)

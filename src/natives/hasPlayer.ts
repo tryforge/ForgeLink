@@ -10,7 +10,7 @@ export default new NativeFunction({
         Arg.requiredGuild('Guild ID', 'The ID of the guild to create the player to.')
     ],
     output: ArgType.Boolean,
-    execute: async function(ctx, [guild]) {
+    execute: async function(ctx, [guild = ctx.guild]) {
         const kazagumo = ctx.client.getExtension(ForgeLink, true).kazagumo
 
         return this.success(kazagumo.players.has((guild.id ?? ctx.guild.id)))

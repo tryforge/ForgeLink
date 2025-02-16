@@ -19,7 +19,7 @@ export default new NativeFunction({
         }
     ],
     output: ArgType.String,
-    execute: async function(ctx, [guild, volume]) {
+    execute: async function(ctx, [guild = ctx.guild, volume]) {
         const kazagumo = ctx.client.getExtension(ForgeLink, true).kazagumo
 
         const player = kazagumo.getPlayer((guild.id ?? ctx.guild.id)); 

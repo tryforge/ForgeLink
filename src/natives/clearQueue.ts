@@ -11,7 +11,7 @@ export default new NativeFunction({
         Arg.requiredGuild('Guild ID', 'The ID of the guild '),
     ],
     output: ArgType.String,
-    execute: async function(ctx, [guild]) {
+    execute: async function(ctx, [guild = ctx.guild]) {
         const kazagumo = ctx.client.getExtension(ForgeLink, true).kazagumo
 
         const player = kazagumo.getPlayer((guild.id ?? ctx.guild.id)); 
