@@ -11,7 +11,7 @@ exports.default = new forgescript_1.NativeFunction({
         forgescript_1.Arg.requiredGuild('Guild ID', 'The ID of the guild to create the player to.'),
     ],
     output: forgescript_1.ArgType.Boolean,
-    execute: async function (ctx, [guild]) {
+    execute: async function (ctx, [guild = ctx.guild]) {
         const kazagumo = ctx.client.getExtension(ForgeLink_1.ForgeLink, true).kazagumo;
         return this.success(kazagumo.destroyPlayer(guild.id));
     }

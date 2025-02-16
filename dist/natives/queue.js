@@ -11,7 +11,7 @@ exports.default = new forgescript_1.NativeFunction({
         forgescript_1.Arg.requiredGuild('Guild ID', 'The ID of the guild '),
     ],
     output: forgescript_1.ArgType.Json,
-    execute: async function (ctx, [guild]) {
+    execute: async function (ctx, [guild = ctx.guild]) {
         const kazagumo = ctx.client.getExtension(ForgeLink_1.ForgeLink, true).kazagumo;
         const player = kazagumo.getPlayer((guild.id ?? ctx.guild.id));
         if (!player)
@@ -19,8 +19,10 @@ exports.default = new forgescript_1.NativeFunction({
         const queueTracks = [];
         if (player.queue.current) {
             queueTracks.push({
-                trackTitle: player.queue.current.getRaw().info.title,
-                trackAuthor: player.queue.current.getRaw().info.author
+                trackSource: player.queue.current.sourceName,
+                trackTitle: player.queue.current.title,
+                trackAuthor: player.queue.current.author,
+                trackUri: player.queue.current.uri
             });
         }
         // Get the rest of the queued tracks
@@ -29,8 +31,10 @@ exports.default = new forgescript_1.NativeFunction({
             const track = player.queue.at(i);
             if (track) {
                 queueTracks.push({
-                    trackTitle: track.getRaw().info.title,
-                    trackAuthor: track.getRaw().info.author
+                    trackSource: track.sourceName,
+                    trackTitle: track.title,
+                    trackAuthor: track.author,
+                    trackUri: track.uri
                 });
             }
         }

@@ -12,20 +12,24 @@ export default new NativeFunction({
         Arg.requiredGuild('Guild ID', 'The ID of the guild '),
     ],
     output: ArgType.Json,
-    execute: async function(ctx, [guild]) {
+    execute: async function(ctx, [guild = ctx.guild]) {
         const kazagumo = ctx.client.getExtension(ForgeLink, true).kazagumo
 
         const player = kazagumo.getPlayer((guild.id ?? ctx.guild.id)); 
 if (!player) return this.customError("No player found!");
 
-        
+
+
+
         const queueTracks = [];
 
         
         if (player.queue.current) {
             queueTracks.push({
-                trackTitle: player.queue.current.getRaw().info.title,
-                trackAuthor: player.queue.current.getRaw().info.author
+                trackSource: player.queue.current.sourceName,
+                trackTitle: player.queue.current.title,
+                trackAuthor: player.queue.current.author,
+                trackUri: player.queue.current.uri
             });
         }
 
@@ -35,8 +39,10 @@ if (!player) return this.customError("No player found!");
             const track = player.queue.at(i);
             if (track) {
                 queueTracks.push({
-                    trackTitle: track.getRaw().info.title,
-                    trackAuthor: track.getRaw().info.author
+                    trackSource: track.sourceName,
+                    trackTitle: track.title,
+                    trackAuthor: track.author,
+                    trackUri: track.uri
                 });
             }
         }

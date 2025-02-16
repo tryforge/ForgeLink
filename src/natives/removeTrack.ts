@@ -18,7 +18,7 @@ export default new NativeFunction({
         }
     ],
     output: ArgType.String,
-    execute: async function(ctx, [guild, position]) {
+    execute: async function(ctx, [guild = ctx.guild, position]) {
         const kazagumo = ctx.client.getExtension(ForgeLink, true).kazagumo
 
         const player = kazagumo.getPlayer((guild.id ?? ctx.guild.id)); 
