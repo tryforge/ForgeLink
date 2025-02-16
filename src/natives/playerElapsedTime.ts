@@ -3,8 +3,9 @@ import type { BaseChannel, VoiceBasedChannel } from 'discord.js'
 import { ForgeLink } from '@structures/ForgeLink'
 
 export default new NativeFunction({
-    name: '$queueLength',
-    description: 'displays the queue length in a specific guild',
+    name: '$playerElapsedTime',
+    aliases: ["$elapsedTime"],
+    description: 'Returns the elapsed time of the current song in milliseconds.',
     brackets: false,
     unwrap: true,
     args: [
@@ -18,6 +19,6 @@ export default new NativeFunction({
 if (!player) return this.customError("No player found!");
 
         
-        return this.successJSON(player.queue.totalSize.toFixed());
+        return this.success(player.position);
     }
 })
