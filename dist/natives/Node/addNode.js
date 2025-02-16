@@ -22,6 +22,6 @@ exports.default = new forgescript_1.NativeFunction({
             url: url,
             secure: secure
         });
-        return this.success(kazagumo.shoukaku.nodes.has(url));
+        return this.success();
     }
 });

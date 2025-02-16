@@ -25,6 +25,6 @@ export default new NativeFunction({
             secure: secure
         })
 
-        return this.success(kazagumo.shoukaku.nodes.has(url))
+        return this.success()
     }
 })
