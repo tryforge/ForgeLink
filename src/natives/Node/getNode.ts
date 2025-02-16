@@ -15,13 +15,11 @@ export default new NativeFunction({
     execute: async function(ctx, [guild = ctx.guild]) {
         const kazagumo = ctx.client.getExtension(ForgeLink, true).kazagumo
 
-       const nodes = Array.from(kazagumo.shoukaku.nodes.values()).map(node => ({
-        name: node.name,
-        auth: node.info.lavaplayer,
-        url: node.ws.url
+        if (!kazagumo) return this.customError("Kazagumo is not initialized.");
+        if (!kazagumo.shoukaku) return this.customError("Shoukaku is not available.");
 
-       }))
+        const resolvedNode = kazagumo.shoukaku.options.nodeResolver(kazagumo.shoukaku.nodes);
 
-        return this.successJSON(nodes)
+        return this.successJSON(resolvedNode)
     }
 })
