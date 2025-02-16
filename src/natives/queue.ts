@@ -9,13 +9,19 @@ export default new NativeFunction({
     brackets: false,
     unwrap: true,
     args: [
-        Arg.requiredGuild('Guild ID', 'The ID of the guild '),
+        {
+            name: 'Guild ID',
+            description: 'The ID of the guild to create the player to.',
+            type: ArgType.Guild,
+            required: true,
+            rest: false
+        },
     ],
     output: ArgType.Json,
     execute: async function(ctx, [guild]) {
         const kazagumo = ctx.client.getExtension(ForgeLink, true).kazagumo
 
-        const player = kazagumo.getPlayer((guild?.id ?? ctx.guild?.id)); 
+        const player = kazagumo.getPlayer((guild ?? ctx.guild)?.id); 
 if (!player) return this.customError("No player found!");
 
 

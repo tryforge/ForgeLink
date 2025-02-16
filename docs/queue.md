@@ -5,9 +5,9 @@ displays the queue/all tracks in a specific guild
 $queue[guildID]
 ```
 ## Fields
-|   Name   |     Description      | Type  | Required | Rest |
-|----------|----------------------|-------|----------|------|
-| Guild ID | The ID of the guild  | Guild | Yes      | No   |
+|   Name   |                 Description                  | Type  | Required | Rest |
+|----------|----------------------------------------------|-------|----------|------|
+| Guild ID | The ID of the guild to create the player to. | Guild | Yes      | No   |
 
 ## Output
 > Json
