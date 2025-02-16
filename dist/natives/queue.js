@@ -16,24 +16,6 @@ exports.default = new forgescript_1.NativeFunction({
         const player = kazagumo.getPlayer((guild.id ?? ctx.guild.id));
         if (!player)
             return this.customError("No player found!");
-        const queueTracks = [];
-        if (player.queue.current) {
-            queueTracks.push({
-                trackTitle: player.queue.current.getRaw().info.title,
-                trackAuthor: player.queue.current.getRaw().info.author
-            });
-        }
-        // Get the rest of the queued tracks
-        const queueSize = Number(player.queue.totalSize.toFixed());
-        for (let i = 0; i < queueSize; i++) {
-            const track = player.queue.at(i);
-            if (track) {
-                queueTracks.push({
-                    trackTitle: track.getRaw().info.title,
-                    trackAuthor: track.getRaw().info.author
-                });
-            }
-        }
-        return this.successJSON({ guildId: guild.id, tracks: queueTracks });
+        return this.successJSON(player.queue.map(x => x.getRaw()));
     }
 });
