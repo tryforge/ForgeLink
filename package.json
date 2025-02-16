@@ -1,7 +1,7 @@
 {
-  "name": "@tryforge/forgelink",
+  "name": "@tryforge/forge.link",
   "version": "1.0.0",
-  "description": "",
+  "description": "A Lavalink implementation made for ForgeScript.",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc -p tsconfig.json && tsc-alias -p tsconfig.json && node ./dist/docgen.js",
