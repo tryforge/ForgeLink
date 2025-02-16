@@ -19,6 +19,34 @@ export default new NativeFunction({
 if (!player) return this.customError("No player found!");
 
 
-        return this.successJSON(player.queue.map(x => x.getRaw()));
+
+
+        const queueTracks = [];
+
+        
+        if (player.queue.current) {
+            queueTracks.push({
+                trackSource: player.queue.current.sourceName,
+                trackTitle: player.queue.current.title,
+                trackAuthor: player.queue.current.author,
+                trackUri: player.queue.current.uri
+            });
+        }
+
+        // Get the rest of the queued tracks
+        const queueSize = Number(player.queue.totalSize.toFixed());
+        for (let i = 0; i < queueSize; i++) {
+            const track = player.queue.at(i);
+            if (track) {
+                queueTracks.push({
+                    trackSource: track.sourceName,
+                    trackTitle: track.title,
+                    trackAuthor: track.author,
+                    trackUri: track.uri
+                });
+            }
+        }
+
+        return this.successJSON({ guildId: guild.id, tracks: queueTracks });
     }
 })
