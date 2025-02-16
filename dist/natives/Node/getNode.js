@@ -7,6 +7,7 @@ exports.default = new forgescript_1.NativeFunction({
     description: 'Gets Player Nodes',
     brackets: false,
     unwrap: true,
+    experimental: true,
     args: [
         forgescript_1.Arg.requiredGuild('Guild ID', 'The ID of the guild of the player to.'),
     ],

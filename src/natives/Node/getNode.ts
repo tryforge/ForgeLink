@@ -7,6 +7,7 @@ export default new NativeFunction({
     description: 'Gets Player Nodes',
     brackets: false,
     unwrap: true,
+    experimental:true,
     args: [
         Arg.requiredGuild('Guild ID', 'The ID of the guild of the player to.'),
     ],
