@@ -27,6 +27,8 @@ export default new NativeFunction({
             secure
         };
 
+
+
         try {
             await kazagumo.shoukaku.addNode(newNode);
             return this.success();

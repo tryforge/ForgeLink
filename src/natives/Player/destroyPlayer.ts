@@ -5,7 +5,7 @@ import { ForgeLink } from '@structures/ForgeLink'
 export default new NativeFunction({
     name: '$destroyPlayer',
     description: 'Destroys a music player in the given guild.',
-    brackets: true,
+    brackets: false,
     unwrap: true,
     args: [
         Arg.requiredGuild('Guild ID', 'The ID of the guild to create the player to.'),
