@@ -3,17 +3,19 @@ import type { BaseChannel, VoiceBasedChannel } from 'discord.js'
 import { ForgeLink } from '@structures/ForgeLink'
 
 export default new NativeFunction({
-    name: '$destroyPlayer',
-    description: 'Destroys a music player in the given guild.',
+    name: '$nodeExists',
+    description: 'Gets Player Nodes',
     brackets: false,
     unwrap: true,
     args: [
-        Arg.requiredGuild('Guild ID', 'The ID of the guild to create the player to.'),
+        Arg.requiredString('Name', 'The name of the node'),
     ],
     output: ArgType.Boolean,
-    execute: async function(ctx, [guild = ctx.guild]) {
+    execute: async function(ctx, [name]) {
         const kazagumo = ctx.client.getExtension(ForgeLink, true).kazagumo
 
-        return this.success(kazagumo.destroyPlayer(guild.id))
+        if (!kazagumo) return this.customError("Kazagumo is not initialized.");
+
+     return this.successJSON(kazagumo.shoukaku.nodes.has(name))
     }
 })
