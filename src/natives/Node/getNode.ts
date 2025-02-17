@@ -28,7 +28,7 @@ export default new NativeFunction({
                     state: node.state,
                     stats: node.stats, 
                     address: lavalinkInfo?.version || "Unknown",
-                    plugins: node.info.lavaplayer
+                    plugins: [node.info.plugins]
                 };
             })
         );
