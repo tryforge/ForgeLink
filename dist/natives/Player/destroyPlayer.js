@@ -5,7 +5,7 @@ const ForgeLink_1 = require("../../classes/structures/ForgeLink");
 exports.default = new forgescript_1.NativeFunction({
     name: '$destroyPlayer',
     description: 'Destroys a music player in the given guild.',
-    brackets: true,
+    brackets: false,
     unwrap: true,
     args: [
         forgescript_1.Arg.requiredGuild('Guild ID', 'The ID of the guild to create the player to.'),
