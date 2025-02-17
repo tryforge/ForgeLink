@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const forgescript_1 = require("@tryforge/forgescript");
-const ForgeLink_1 = require("../classes/structures/ForgeLink");
+const ForgeLink_1 = require("../../classes/structures/ForgeLink");
 exports.default = new forgescript_1.NativeFunction({
-    name: '$skipTrack',
-    description: 'skips a track',
+    name: '$pause',
+    description: 'pauses a track',
     brackets: false,
     unwrap: true,
     args: [
@@ -16,7 +16,7 @@ exports.default = new forgescript_1.NativeFunction({
         const player = kazagumo.getPlayer((guild.id ?? ctx.guild.id));
         if (!player)
             return this.customError("No player found!");
-        await player.skip();
+        await player.pause(true);
         return this.success();
     }
 });

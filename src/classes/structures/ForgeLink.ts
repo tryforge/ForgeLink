@@ -1,6 +1,6 @@
 import { EventManager, ForgeClient, ForgeExtension, FunctionManager } from '@tryforge/forgescript'
 import { Connectors, type ShoukakuOptions, type NodeOption, ShoukakuEvents } from 'shoukaku'
-import { Kazagumo, type KazagumoEvents, type KazagumoOptions } from 'kazagumo'
+import { Kazagumo, Plugins, type KazagumoEvents, type KazagumoOptions } from 'kazagumo'
 import { KazagumoCommandManager } from '@managers/KazagumoCommandManager'
 import { ShoukkauCommandManager } from '@managers/ShoukakuCommandManager'
 import { join } from 'path'
@@ -55,7 +55,11 @@ export class ForgeLink extends ForgeExtension {
             },
             new Connectors.DiscordJS(client),
             this.options.nodes,
-            this.options.shoukakuOptions
+            this.options.shoukakuOptions,
+
+            
+              
+
         )
         this.#kc = new KazagumoCommandManager(client)
         this.#sc = new ShoukkauCommandManager(client)

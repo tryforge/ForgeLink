@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const forgescript_1 = require("@tryforge/forgescript");
-const ForgeLink_1 = require("../classes/structures/ForgeLink");
+const ForgeLink_1 = require("../../classes/structures/ForgeLink");
 exports.default = new forgescript_1.NativeFunction({
-    name: '$queueLength',
-    description: 'displays the queue length in a specific guild',
+    name: '$clearQueue',
+    description: 'Clears the queue/all tracks in a specific guild',
     brackets: false,
     unwrap: true,
     args: [
@@ -16,6 +16,7 @@ exports.default = new forgescript_1.NativeFunction({
         const player = kazagumo.getPlayer((guild.id ?? ctx.guild.id));
         if (!player)
             return this.customError("No player found!");
-        return this.successJSON(player.queue.totalSize.toFixed());
+        player.queue.clear();
+        return this.success();
     }
 });
