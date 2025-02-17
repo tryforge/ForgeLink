@@ -1,5 +1,5 @@
 # $addNode
-adds a player Nodes
+Adds a new Lavalink node to the player.
 ## Usage
 ```
 $addNode[name;authentication;host;port;secure]
@@ -10,7 +10,7 @@ $addNode[name;authentication;host;port;secure]
 | Name           | The name of the node to add to the player | String  | Yes      | No   |
 | Authentication | The password to authenticate the node     | String  | Yes      | No   |
 | Host           | The hostname or IP of the Lavalink server | String  | Yes      | No   |
-| Port           | The port lavalink is running on           | Number  | Yes      | No   |
+| Port           | The port Lavalink is running on           | Number  | Yes      | No   |
 | Secure         | Whether or not the node is secure.        | Boolean | Yes      | No   |
 
 ## Output

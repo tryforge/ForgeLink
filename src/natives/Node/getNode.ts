@@ -11,7 +11,7 @@ export default new NativeFunction({
     args: [
         Arg.requiredGuild('Guild ID', 'The ID of the guild of the player to.'),
     ],
-    output: ArgType.Boolean,
+    output: ArgType.Json,
     execute: async function(ctx, [guild = ctx.guild]) {
         const kazagumo = ctx.client.getExtension(ForgeLink, true).kazagumo
 
@@ -28,7 +28,7 @@ export default new NativeFunction({
                     state: node.state,
                     stats: node.stats, 
                     address: lavalinkInfo?.version || "Unknown",
-                    auth: node.rest.getLavalinkInfo,
+                    plugins: node.info.lavaplayer
                 };
             })
         );

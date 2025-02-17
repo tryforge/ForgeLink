@@ -14,6 +14,14 @@ export default new NativeFunction({
     execute: async function(ctx, [guild = ctx.guild]) {
         const kazagumo = ctx.client.getExtension(ForgeLink, true).kazagumo
 
-        return this.success(kazagumo.destroyPlayer(guild.id))
+
+
+        try {
+            await kazagumo.destroyPlayer(guild.id);
+            return this.success();
+        } catch (error) {
+            console.error(`[Player Error] Failed to destroy player of "${guild.id}":`, error);
+            return this.customError(`Failed to Destroy Player: ${error.message || 'Unknown error'}`);
+        }
     }
 })
