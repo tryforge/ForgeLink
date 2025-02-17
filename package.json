@@ -1,28 +1,24 @@
 {
-  "name": "forgelink",
+  "devDependencies": {
+    "@types/node": "^20.5.9",
+    "discord.js": "^14.13.0",
+    "dotenv": "^16.3.1",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "forgescript": "github:tryforge/ForgeScript",
+    "rawrlink": "^1.0.6"
+  },
+  "name": "lavaforge",
   "version": "1.0.0",
-  "description": "",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc -p tsconfig.json && tsc-alias -p tsconfig.json && node ./dist/docgen.js",
-    "rebuild": "tsc && tsc-alias",
-    "test": "node __test__/index.js"
+    "preinstall": "tsc",
+    "test": "tsc && node dist/__tests__/runner"
   },
   "keywords": [],
   "author": "",
-  "license": "Apache-2.0",
-  "packageManager": "pnpm@9.15.4",
-  "devDependencies": {
-    "@tryforge/forgescript": "^2.2.0",
-    "@types/node": "^22.13.1",
-    "ascii-table3": "^0.9.0",
-    "discord.js": "^14.18.0",
-    "shoukaku": "^4.1.1",
-    "tsc-alias": "^1.8.10",
-    "typescript": "^5.7.3"
-  },
-  "dependencies": {
-    "kazagumo": "^3.2.2",
-    "typedoc": "^0.27.7"
-  }
+  "license": "ISC",
+  "description": ""
 }
