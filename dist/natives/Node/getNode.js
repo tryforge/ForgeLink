@@ -27,7 +27,6 @@ exports.default = new forgescript_1.NativeFunction({
                 state: node.state,
                 stats: node.stats,
                 address: lavalinkInfo?.version || "Unknown",
-                plugins: Array.isArray(node.info?.plugins) ? node.info.plugins : []
             };
         }));
         return this.successJSON({ nodes });
