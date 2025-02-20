@@ -49,7 +49,7 @@ const { ForgeLink } = require("@tryforge/forge.link");
 As it is required, now you are allowed to create an instance of it.
 ```js
 const lavalink = new ForgeLink({
-    events: []
+    events: {}
 });
 ```
 Now, extension is defined and ready to be attached to the client.
@@ -66,27 +66,27 @@ ForgeLink provides a simple interface to declare the events to listen to.
 First, we need to declare the `kazugomo` in our events.
 ```js
 const lavalink = new ForgeLink({
-    events: [
+    events: {
         kazagumo: [],
-    ]
+    },
 });
 ```
 
 Now that you have done that you can parse events into ForgeLink without any issue
 ```js
 const lavalink = new ForgeLink({
-    events: [
+    events: {
         kazagumo: ['playerStart']
-    ]
+    },
 });
 ```
 Current setup must look like this.
 ```js
 const { ForgeLink } = require("@tryforge/forge.link");
 const lavalink = new ForgeLink({
-    events: [
+    events: {
         kazagumo: ['playerStart']
-    ]
+    },
 });
 
 const client = new ForgeClient({
@@ -104,7 +104,7 @@ lavalink.commands.kazagumo.add({
     name: "eventName",
     code: "$log[A track started playing.]"
 });
-
+```
 ## Lavalink Initiation
 When setting up forge link you must declare your lavalink server. there are a wide range of lavalink servers online. to declare your lavalink server modify your setup to include this
 
