@@ -17,7 +17,7 @@ export default new NativeFunction({
 
 
         try {
-            await kazagumo.destroyPlayer(guild.id);
+            await kazagumo.destroyPlayer((guild.id ?? ctx.guild.id));
             return this.success();
         } catch (error) {
             console.error(`[Player Error] Failed to destroy player of "${guild.id}":`, error);

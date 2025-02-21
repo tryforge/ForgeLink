@@ -14,7 +14,7 @@ exports.default = new forgescript_1.NativeFunction({
     execute: async function (ctx, [guild = ctx.guild]) {
         const kazagumo = ctx.client.getExtension(ForgeLink_1.ForgeLink, true).kazagumo;
         try {
-            await kazagumo.destroyPlayer(guild.id);
+            await kazagumo.destroyPlayer((guild.id ?? ctx.guild.id));
             return this.success();
         }
         catch (error) {
