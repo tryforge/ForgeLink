@@ -3,7 +3,7 @@ import { ForgeLink } from '@structures/ForgeLink';
 
 export default new NativeFunction({
     name: '$addNode',
-    description: 'Adds a new Lavalink node to the player.',
+    description: 'Adds a new Lavalink node.',
     brackets: true,
     unwrap: true,
     args: [

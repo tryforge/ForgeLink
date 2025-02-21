@@ -1,5 +1,5 @@
 # $queue
-displays the queue/all tracks in a specific guild
+displays the queue/all tracks from the guild player
 ## Usage
 ```
 $queue[guildID]

@@ -5,7 +5,7 @@ import { ForgeLink } from '@structures/ForgeLink'
 
 export default new NativeFunction({
     name: '$pause',
-    description: 'pauses a track',
+    description: 'Pauses the guild player',
     brackets: false,
     unwrap: true,
     args: [

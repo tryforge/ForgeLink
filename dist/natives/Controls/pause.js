@@ -4,7 +4,7 @@ const forgescript_1 = require("@tryforge/forgescript");
 const ForgeLink_1 = require("../../classes/structures/ForgeLink");
 exports.default = new forgescript_1.NativeFunction({
     name: '$pause',
-    description: 'pauses a track',
+    description: 'Pauses the guild player',
     brackets: false,
     unwrap: true,
     args: [

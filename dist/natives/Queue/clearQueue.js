@@ -4,7 +4,7 @@ const forgescript_1 = require("@tryforge/forgescript");
 const ForgeLink_1 = require("../../classes/structures/ForgeLink");
 exports.default = new forgescript_1.NativeFunction({
     name: '$clearQueue',
-    description: 'Clears the queue/all tracks in a specific guild',
+    description: 'Clears the queue/all tracks from the guild player',
     brackets: false,
     unwrap: true,
     args: [

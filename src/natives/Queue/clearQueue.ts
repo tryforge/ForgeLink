@@ -4,7 +4,7 @@ import { ForgeLink } from '@structures/ForgeLink'
 
 export default new NativeFunction({
     name: '$clearQueue',
-    description: 'Clears the queue/all tracks in a specific guild',
+    description: 'Clears the queue/all tracks from the guild player',
     brackets: false,
     unwrap: true,
     args: [

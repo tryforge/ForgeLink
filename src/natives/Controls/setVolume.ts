@@ -5,7 +5,7 @@ import { ForgeLink } from '@structures/ForgeLink'
 
 export default new NativeFunction({
     name: '$setVolume',
-    description: 'sets player volume',
+    description: 'Sets the guild player volume/loudness (recomended limit:200) ',
     brackets: true,
     unwrap: true,
     args: [

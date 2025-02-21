@@ -4,7 +4,7 @@ import { ForgeLink } from '@structures/ForgeLink'
 
 export default new NativeFunction({
     name: '$removeTrack',
-    description: 'Removes a track in a specific guild',
+    description: 'Removes a track from the guild player',
     brackets: true,
     unwrap: true,
     args: [

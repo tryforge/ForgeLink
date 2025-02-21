@@ -1,5 +1,5 @@
 # $nodeExists
-Gets Player Nodes
+Checks if a node exists from the name.
 ## Usage
 ```
 $nodeExists[name]

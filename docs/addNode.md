@@ -1,5 +1,5 @@
 # $addNode
-Adds a new Lavalink node to the player.
+Adds a new Lavalink node.
 ## Usage
 ```
 $addNode[name;authentication;host;port;secure]

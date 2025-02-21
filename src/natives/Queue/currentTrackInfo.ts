@@ -6,7 +6,7 @@ import { info } from 'console'
 
 export default new NativeFunction({
     name: '$currentTrackInfo',
-    description: 'Gets info on a track in a specific guild',
+    description: 'Gets info on the current track.',
     brackets: false,
     unwrap: true,
     args: [

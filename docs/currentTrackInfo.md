@@ -1,5 +1,5 @@
 # $currentTrackInfo
-Gets info on a track in a specific guild
+Gets info on the current track.
 ## Usage
 ```
 $currentTrackInfo[guildID]

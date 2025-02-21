@@ -1,5 +1,5 @@
 # $skipTrack
-skips a track
+Skips the track in the guild player
 ## Usage
 ```
 $skipTrack[guildID]

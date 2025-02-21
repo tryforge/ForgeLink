@@ -4,7 +4,7 @@ const forgescript_1 = require("@tryforge/forgescript");
 const ForgeLink_1 = require("../../classes/structures/ForgeLink");
 exports.default = new forgescript_1.NativeFunction({
     name: '$addTrack',
-    description: 'Adds a track in a specific guild',
+    description: 'Adds a track into the guild player to listen to.',
     brackets: true,
     unwrap: true,
     args: [

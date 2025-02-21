@@ -1,5 +1,5 @@
 # $queueLength
-displays the queue length in a specific guild
+displays the queue length in the guild player
 ## Usage
 ```
 $queueLength[guildID]

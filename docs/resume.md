@@ -1,5 +1,5 @@
 # $resume
-resumes playing a track
+Resumes the track in the guild player
 ## Usage
 ```
 $resume[guildID]

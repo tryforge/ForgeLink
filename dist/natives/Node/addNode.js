@@ -4,7 +4,7 @@ const forgescript_1 = require("@tryforge/forgescript");
 const ForgeLink_1 = require("../../classes/structures/ForgeLink");
 exports.default = new forgescript_1.NativeFunction({
     name: '$addNode',
-    description: 'Adds a new Lavalink node to the player.',
+    description: 'Adds a new Lavalink node.',
     brackets: true,
     unwrap: true,
     args: [

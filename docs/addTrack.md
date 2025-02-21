@@ -1,5 +1,5 @@
 # $addTrack
-Adds a track in a specific guild
+Adds a track into the guild player to listen to.
 ## Usage
 ```
 $addTrack[guildID;query]

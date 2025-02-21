@@ -1,5 +1,5 @@
 # $trackInfoOf
-Gets info on a track in a specific guild
+Gets info on a track from a guild player
 ## Usage
 ```
 $trackInfoOf[guildID;position]

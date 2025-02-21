@@ -1,5 +1,5 @@
 # $setVolume
-sets player volume
+Sets the guild player volume/loudness (recomended limit:200) 
 ## Usage
 ```
 $setVolume[guildID;volume]

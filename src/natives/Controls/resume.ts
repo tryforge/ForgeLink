@@ -5,7 +5,7 @@ import { ForgeLink } from '@structures/ForgeLink'
 
 export default new NativeFunction({
     name: '$resume',
-    description: 'resumes playing a track',
+    description: 'Resumes the track in the guild player',
     brackets: false,
     unwrap: true,
     args: [

@@ -4,7 +4,7 @@ const forgescript_1 = require("@tryforge/forgescript");
 const ForgeLink_1 = require("../../classes/structures/ForgeLink");
 exports.default = new forgescript_1.NativeFunction({
     name: '$trackInfoOf',
-    description: 'Gets info on a track in a specific guild',
+    description: 'Gets info on a track from a guild player',
     brackets: true,
     unwrap: true,
     args: [

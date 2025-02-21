@@ -1,5 +1,5 @@
 # $removeNode
-removes a Lavalink node from the player.
+removes a Lavalink node.
 ## Usage
 ```
 $removeNode[name;reason]

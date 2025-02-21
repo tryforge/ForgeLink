@@ -1,5 +1,5 @@
 # $clearQueue
-Clears the queue/all tracks in a specific guild
+Clears the queue/all tracks from the guild player
 ## Usage
 ```
 $clearQueue[guildID]

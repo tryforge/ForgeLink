@@ -1,5 +1,5 @@
 # $isPaused
-Check whether the given guild has a player is paused.
+Check whether the given guild player is paused.
 ## Usage
 ```
 $isPaused[guildID]

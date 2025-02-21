@@ -1,5 +1,5 @@
 # $removeTrack
-Removes a track in a specific guild
+Removes a track from the guild player
 ## Usage
 ```
 $removeTrack[guildID;position]

@@ -1,5 +1,5 @@
 # $getNodes
-Gets Player Nodes
+Gets the lavalink nodes.
 ## Usage
 ```
 $getNodes[guildID]

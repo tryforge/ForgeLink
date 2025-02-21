@@ -4,7 +4,7 @@ const forgescript_1 = require("@tryforge/forgescript");
 const ForgeLink_1 = require("../../classes/structures/ForgeLink");
 exports.default = new forgescript_1.NativeFunction({
     name: '$nodeExists',
-    description: 'Gets Player Nodes',
+    description: 'Checks if a node exists from the name.',
     brackets: false,
     unwrap: true,
     args: [

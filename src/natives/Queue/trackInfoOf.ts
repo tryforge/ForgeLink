@@ -3,7 +3,7 @@ import { ForgeLink } from '@structures/ForgeLink'
 
 export default new NativeFunction({
     name: '$trackInfoOf',
-    description: 'Gets info on a track in a specific guild',
+    description: 'Gets info on a track from a guild player',
     brackets: true,
     unwrap: true,
     args: [

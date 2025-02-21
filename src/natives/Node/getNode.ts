@@ -4,7 +4,7 @@ import { ForgeLink } from '@structures/ForgeLink'
 
 export default new NativeFunction({
     name: '$getNodes',
-    description: 'Gets Player Nodes',
+    description: 'Gets the lavalink nodes.',
     brackets: false,
     unwrap: true,
     experimental:true,

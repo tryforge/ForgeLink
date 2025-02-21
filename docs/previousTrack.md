@@ -1,5 +1,5 @@
 # $previousTrack
-goes to previous track
+Goes to a previous track in the queue (if one exists)
 ## Usage
 ```
 $previousTrack[guildID]

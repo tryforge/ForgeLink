@@ -4,7 +4,7 @@ const forgescript_1 = require("@tryforge/forgescript");
 const ForgeLink_1 = require("../../classes/structures/ForgeLink");
 exports.default = new forgescript_1.NativeFunction({
     name: '$removeNode',
-    description: 'removes a Lavalink node from the player.',
+    description: 'removes a Lavalink node.',
     brackets: true,
     unwrap: true,
     args: [

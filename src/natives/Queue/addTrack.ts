@@ -4,7 +4,7 @@ import { ForgeLink } from '@structures/ForgeLink'
 
 export default new NativeFunction({
     name: '$addTrack',
-    description: 'Adds a track in a specific guild',
+    description: 'Adds a track into the guild player to listen to.',
     brackets: true,
     unwrap: true,
     args: [

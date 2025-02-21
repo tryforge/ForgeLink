@@ -1,5 +1,5 @@
 # $pause
-pauses a track
+Pauses the guild player
 ## Usage
 ```
 $pause[guildID]

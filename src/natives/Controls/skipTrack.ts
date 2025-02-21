@@ -5,7 +5,7 @@ import { ForgeLink } from '@structures/ForgeLink'
 
 export default new NativeFunction({
     name: '$skipTrack',
-    description: 'skips a track',
+    description: 'Skips the track in the guild player',
     brackets: false,
     unwrap: true,
     args: [

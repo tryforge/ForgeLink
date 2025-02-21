@@ -4,7 +4,7 @@ import { ForgeLink } from '@structures/ForgeLink'
 
 export default new NativeFunction({
     name: '$nodeExists',
-    description: 'Gets Player Nodes',
+    description: 'Checks if a node exists from the name.',
     brackets: false,
     unwrap: true,
     args: [

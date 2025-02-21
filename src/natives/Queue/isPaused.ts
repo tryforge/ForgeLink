@@ -3,7 +3,7 @@ import { ForgeLink } from '@structures/ForgeLink'
 
 export default new NativeFunction({
     name: '$isPaused',
-    description: 'Check whether the given guild has a player is paused.',
+    description: 'Check whether the given guild player is paused.',
     brackets: false,
     unwrap: true,
     args: [
