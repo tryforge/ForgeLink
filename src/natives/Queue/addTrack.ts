@@ -28,8 +28,7 @@ export default new NativeFunction({
 
         if (!player.playing && !player.paused) player.play();
         
-        return this.success(
-            JSON.stringify({
+        return this.successJSON({
 
                 status: "success",
         type: result.type,
@@ -41,7 +40,6 @@ export default new NativeFunction({
         trackTitle: result.type !== "PLAYLIST" ? result.tracks[0].title : null,
         trackAuthor: result.type !== "PLAYLIST" ? result.tracks[0].author : null,
         trackImage: result.tracks[0].thumbnail 
-    }, null, 2
-            ) );
+    });
     }
 })
