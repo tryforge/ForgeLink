@@ -5,7 +5,7 @@ const ForgeLink_1 = require("../../classes/structures/ForgeLink");
 exports.default = new forgescript_1.NativeFunction({
     name: '$playerTextID',
     description: 'gets the players text channel id.',
-    brackets: true,
+    brackets: false,
     unwrap: true,
     args: [
         forgescript_1.Arg.requiredGuild('Guild ID', 'The ID of the guild get the player ID from.'),

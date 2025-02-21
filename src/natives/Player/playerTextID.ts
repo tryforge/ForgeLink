@@ -5,7 +5,7 @@ import { ForgeLink } from '@structures/ForgeLink'
 export default new NativeFunction({
     name: '$playerTextID',
     description: 'gets the players text channel id.',
-    brackets: true,
+    brackets: false,
     unwrap: true,
     args: [
         Arg.requiredGuild('Guild ID', 'The ID of the guild get the player ID from.'),
