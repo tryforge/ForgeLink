@@ -11,7 +11,7 @@ Music made stronger with Lavalink for [ForgeScript](https://npmjs.com/package/@t
 ## Features
 - Easy to use functions.
 - Various amount of events.
-- Support for various filters.
+- Support for various filters. (SOON)
 - Support for all audio providers.
 - Support for playlists.
 
