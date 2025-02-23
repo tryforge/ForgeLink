@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const forgescript_1 = require("@tryforge/forgescript");
 const ForgeLink_1 = require("../../classes/structures/ForgeLink");
 exports.default = new forgescript_1.NativeFunction({
-    name: '$clearQueue',
+    name: '$filters',
     description: 'Clears the queue/all tracks in a specific guild',
     brackets: false,
     unwrap: true,
@@ -16,6 +16,7 @@ exports.default = new forgescript_1.NativeFunction({
         const player = kazagumo.getPlayer((guild.id ?? ctx.guild.id));
         if (!player)
             return this.customError("No player found!");
+        console.log(player.filters);
         player.shoukaku.node.rest.updatePlayer({
             guildId: guild.id,
             playerOptions: {

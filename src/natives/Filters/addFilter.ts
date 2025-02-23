@@ -1,10 +1,11 @@
 import { Arg, ArgType, NativeFunction } from '@tryforge/forgescript'
 import type { BaseChannel, VoiceBasedChannel } from 'discord.js'
 import { ForgeLink } from '@structures/ForgeLink'
+import KazagumoPlugin from 'kazagumo-filter'
 
 
 export default new NativeFunction({
-    name: '$clearQueue',
+    name: '$filters',
     description: 'Clears the queue/all tracks in a specific guild',
     brackets: false,
     unwrap: true,
@@ -17,6 +18,8 @@ export default new NativeFunction({
 
         const player = kazagumo.getPlayer((guild.id ?? ctx.guild.id)); 
 if (!player) return this.customError("No player found!");
+
+        console.log(player.filters)
 
         player.shoukaku.node.rest.updatePlayer({
 

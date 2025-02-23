@@ -1,9 +1,11 @@
 import { EventManager, ForgeClient, ForgeExtension, FunctionManager } from '@tryforge/forgescript'
 import { Connectors, type ShoukakuOptions, type NodeOption, ShoukakuEvents } from 'shoukaku'
-import { Kazagumo, Plugins, type KazagumoEvents, type KazagumoOptions } from 'kazagumo'
+import { Kazagumo, Plugins, type KazagumoEvents, type KazagumoOptions, type KazagumoPlugin } from 'kazagumo'
+import KazagumoFilter from 'kazagumo-filter'
 import { KazagumoCommandManager } from '@managers/KazagumoCommandManager'
 import { ShoukkauCommandManager } from '@managers/ShoukakuCommandManager'
 import { join } from 'path'
+import { filter } from 'typedoc/dist/lib/utils/array'
 
 export interface ForgeLinkSetupOptions {
     /**
@@ -52,6 +54,7 @@ export class ForgeLink extends ForgeExtension {
                     const guild = client.guilds.cache.get(guildId);
                     if (guild) guild.shard.send(payload);
                 },
+                plugins: [new KazagumoFilter()]
             },
             new Connectors.DiscordJS(client),
             this.options.nodes,
