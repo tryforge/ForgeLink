@@ -20,15 +20,6 @@ export default new NativeFunction({
 if (!player) return this.customError("No player found!");
 
         console.log(player.filters)
-
-        player.shoukaku.node.rest.updatePlayer({
-
-            guildId: guild.id,
-            playerOptions: {
-                filters: {}
-            }
-
-        })
         
         return this.success();
     }
