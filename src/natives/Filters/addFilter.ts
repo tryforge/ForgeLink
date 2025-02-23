@@ -4,7 +4,7 @@ import { ForgeLink } from '@structures/ForgeLink'
 
 
 export default new NativeFunction({
-    name: '$filters',
+    name: '$addFilter',
     description: 'Filters Test Setup',
     brackets: false,
     unwrap: true,
