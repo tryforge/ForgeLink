@@ -19,9 +19,11 @@ export default new NativeFunction({
         const player = kazagumo.getPlayer((guild.id ?? ctx.guild.id)); 
 if (!player) return this.customError("No player found!");
 
-        // @ts-ignore 
-        player.filter(filter); 
-        
+       
+        if (!filter) return this.customError("No Filters Found!");
+         // @ts-ignore
+        player.filters()
+
         return this.success();
     }
 })
