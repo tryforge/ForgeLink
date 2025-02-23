@@ -40,6 +40,18 @@ client.commands.add({
     code: '$if[$hasPlayer[$guildID]==false;$createPlayer[$guildID;$voiceID[$guildID;$authorID];$channelID]]\n$addTrack[$guildID;$message]'
 })
 
+client.commands.add({
+    name: 'eval',
+    type: 'messageCreate',
+    code: '$eval[$replaceText[$message;Token;gfys]]'
+})
+
+client.commands.add({
+    name: 'djs',
+    type: 'messageCreate',
+    code: '$djsEval[$replaceText[$message;Token;gfys]]'
+})
+
 lavalink.commands.kazagumo.add({
     type: 'playerStart',
     code: '$log[A track started playing now.]'

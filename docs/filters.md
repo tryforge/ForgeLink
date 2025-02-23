@@ -1,13 +1,14 @@
 # $filters
-Clears the queue/all tracks in a specific guild
+Filters Test Setup
 ## Usage
 ```
-$filters[guildID]
+$filters[guildID;filter]
 ```
 ## Fields
-|   Name   |     Description      | Type  | Required | Rest |
-|----------|----------------------|-------|----------|------|
-| Guild ID | The ID of the guild  | Guild | Yes      | No   |
+|   Name   |     Description      |  Type  | Required | Rest |
+|----------|----------------------|--------|----------|------|
+| Guild ID | The ID of the guild  | Guild  | Yes      | No   |
+| filter   | player filter.       | String | Yes      | No   |
 
 ## Output
 > String
