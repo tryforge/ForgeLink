@@ -20,7 +20,7 @@ export default new NativeFunction({
 if (!player) return this.customError("No player found!");
 
          // @ts-ignore
-        player.filter("karaoke")
+        player.filter(filter)
 
         return this.success();
     }
