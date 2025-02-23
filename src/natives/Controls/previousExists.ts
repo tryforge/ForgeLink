@@ -1,27 +1,22 @@
 import { Arg, ArgType, NativeFunction } from '@tryforge/forgescript'
-import type { BaseChannel, VoiceBasedChannel } from 'discord.js'
 import { ForgeLink } from '@structures/ForgeLink'
 
-
 export default new NativeFunction({
-    name: '$addFilter',
-    description: 'Filters Test Setup',
+    name: '$previousExists',
+    description: 'Check whether a previous track exists or not.',
     brackets: false,
     unwrap: true,
     args: [
-        Arg.requiredGuild('Guild ID', 'The ID of the guild '),
-        Arg.requiredString('Filter', 'The Filter to apply'),
+        Arg.requiredGuild('Guild ID', 'The ID of the player')
     ],
     output: ArgType.Boolean,
-    execute: async function(ctx, [guild = ctx.guild, filter]) {
+    execute: async function(ctx, [guild = ctx.guild]) {
         const kazagumo = ctx.client.getExtension(ForgeLink, true).kazagumo
 
         const player = kazagumo.getPlayer((guild.id ?? ctx.guild.id)); 
 if (!player) return this.customError("No player found!");
 
-         // @ts-ignore
-        await player.filter(filter)
-
-        return this.success();
+const previous = player.queue.previous;
+        return this.success(previous);
     }
 })
