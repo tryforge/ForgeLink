@@ -10,19 +10,17 @@ export default new NativeFunction({
     unwrap: true,
     args: [
         Arg.requiredGuild('Guild ID', 'The ID of the guild '),
-        Arg.requiredString('filter', 'player filter.')
+        
     ],
     output: ArgType.String,
-    execute: async function(ctx, [guild = ctx.guild, filter]) {
+    execute: async function(ctx, [guild = ctx.guild]) {
         const kazagumo = ctx.client.getExtension(ForgeLink, true).kazagumo
 
         const player = kazagumo.getPlayer((guild.id ?? ctx.guild.id)); 
 if (!player) return this.customError("No player found!");
 
-       
-        if (!filter) return this.customError("No Filters Found!");
          // @ts-ignore
-        player.filters()
+        player.filter("nightcore")
 
         return this.success();
     }

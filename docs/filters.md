@@ -2,13 +2,12 @@
 Filters Test Setup
 ## Usage
 ```
-$filters[guildID;filter]
+$filters[guildID]
 ```
 ## Fields
-|   Name   |     Description      |  Type  | Required | Rest |
-|----------|----------------------|--------|----------|------|
-| Guild ID | The ID of the guild  | Guild  | Yes      | No   |
-| filter   | player filter.       | String | Yes      | No   |
+|   Name   |     Description      | Type  | Required | Rest |
+|----------|----------------------|-------|----------|------|
+| Guild ID | The ID of the guild  | Guild | Yes      | No   |
 
 ## Output
 > String
