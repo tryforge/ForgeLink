@@ -4,11 +4,11 @@ const forgescript_1 = require("@tryforge/forgescript");
 const ForgeLink_1 = require("../../classes/structures/ForgeLink");
 exports.default = new forgescript_1.NativeFunction({
     name: '$previousExists',
-    description: 'Check whether a previous track exists or not.',
+    description: 'Check whether a previous track exists in the player queue.',
     brackets: false,
     unwrap: true,
     args: [
-        forgescript_1.Arg.requiredGuild('Guild ID', 'The ID of the player')
+        forgescript_1.Arg.requiredGuild('Guild ID', 'The ID of the guild to check the player for.')
     ],
     output: forgescript_1.ArgType.Boolean,
     execute: async function (ctx, [guild = ctx.guild]) {
@@ -16,7 +16,7 @@ exports.default = new forgescript_1.NativeFunction({
         const player = kazagumo.getPlayer((guild.id ?? ctx.guild.id));
         if (!player)
             return this.customError("No player found!");
-        const previous = player.queue.previous;
-        return this.success(previous);
+        const hasPrevious = player.queue.previous !== null;
+        return this.success(hasPrevious);
     }
 });
