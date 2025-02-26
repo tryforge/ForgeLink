@@ -17,7 +17,7 @@ export default new NativeFunction({
 
         if (!kazagumo) return this.customError("Kazagumo is not initialized.");
 
-        const result = await kazagumo.search(query);
+        const result = await kazagumo.search(query,{requester: ctx.message.author.id});
         if (!result.tracks.length) return this.customError("No results found!");
 
         let tracks = result.tracks;

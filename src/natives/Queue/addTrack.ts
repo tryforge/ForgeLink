@@ -18,7 +18,7 @@ export default new NativeFunction({
         const player = kazagumo.getPlayer((guild.id ?? ctx.guild.id))
         if (!player) return this.customError("No player found!")
 
-        const result = await kazagumo.search(query)
+        const result = await kazagumo.search(query,{requester: ctx.message.author.id})
 
         if (!result.tracks.length) return this.customError("No results found!")
 
