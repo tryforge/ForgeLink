@@ -17,7 +17,7 @@ exports.default = new forgescript_1.NativeFunction({
         const kazagumo = ctx.client.getExtension(ForgeLink_1.ForgeLink, true).kazagumo;
         if (!kazagumo)
             return this.customError("Kazagumo is not initialized.");
-        const result = await kazagumo.search(query, { requester: ctx.message.author.id });
+        const result = await kazagumo.search(query, { requester: ctx.member?.id });
         if (!result.tracks.length)
             return this.customError("No results found!");
         let tracks = result.tracks;
