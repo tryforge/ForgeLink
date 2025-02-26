@@ -4,6 +4,7 @@ import { ForgeLink } from '@structures/ForgeLink';
 export default new NativeFunction({
     name: '$skipExists',
     description: 'Check whether the next track exists in the player queue.',
+    version: "1.0.2",
     brackets: false,
     unwrap: true,
     args: [

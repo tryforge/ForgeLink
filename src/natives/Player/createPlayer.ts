@@ -5,6 +5,7 @@ import { ForgeLink } from '@structures/ForgeLink'
 export default new NativeFunction({
     name: '$createPlayer',
     description: 'Creates a new music player in the given guild.',
+    version: "1.0.0",
     brackets: true,
     unwrap: true,
     args: [

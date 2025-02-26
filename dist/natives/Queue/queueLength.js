@@ -5,6 +5,7 @@ const ForgeLink_1 = require("../../classes/structures/ForgeLink");
 exports.default = new forgescript_1.NativeFunction({
     name: '$queueLength',
     description: 'displays the queue length in the guild player',
+    version: "1.0.0",
     brackets: false,
     unwrap: true,
     args: [

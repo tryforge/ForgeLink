@@ -4,6 +4,7 @@ import { ForgeLink } from '@structures/ForgeLink';
 export default new NativeFunction({
     name: '$searchTrack',
     description: 'Searches for tracks in the guild and returns results.',
+    version: "1.0.3",
     brackets: true,
     unwrap: true,
     args: [

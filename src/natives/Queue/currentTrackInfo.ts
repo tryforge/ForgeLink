@@ -7,6 +7,7 @@ import { info } from 'console'
 export default new NativeFunction({
     name: '$currentTrackInfo',
     description: 'Gets info on the current track.',
+    version: "1.0.0",
     brackets: false,
     unwrap: true,
     args: [

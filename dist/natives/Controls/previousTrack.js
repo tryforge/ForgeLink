@@ -5,6 +5,7 @@ const ForgeLink_1 = require("../../classes/structures/ForgeLink");
 exports.default = new forgescript_1.NativeFunction({
     name: '$previousTrack',
     description: 'Goes to a previous track in the queue (if one exists)',
+    version: "1.0.0",
     brackets: false,
     unwrap: true,
     args: [

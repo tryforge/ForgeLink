@@ -5,6 +5,7 @@ const ForgeLink_1 = require("../../classes/structures/ForgeLink");
 exports.default = new forgescript_1.NativeFunction({
     name: '$nodeExists',
     description: 'Checks if a node exists from the name.',
+    version: "1.0.2",
     brackets: false,
     unwrap: true,
     args: [

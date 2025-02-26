@@ -5,7 +5,8 @@ import KazagumoFilter from 'kazagumo-filter'
 import { KazagumoCommandManager } from '@managers/KazagumoCommandManager'
 import { ShoukkauCommandManager } from '@managers/ShoukakuCommandManager'
 import { join } from 'path'
-import { filter } from 'typedoc/dist/lib/utils/array'
+
+
 
 export interface ForgeLinkSetupOptions {
     /**
@@ -39,7 +40,7 @@ export interface ForgeLinkSetupOptions {
 export class ForgeLink extends ForgeExtension {
     name = 'ForgeLink'
     description = '...'
-    version = '...'
+    version = '1.1.0-dev'
     #e: Kazagumo | null = null
     #kc: KazagumoCommandManager
     #sc: ShoukkauCommandManager

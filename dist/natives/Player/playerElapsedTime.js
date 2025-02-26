@@ -6,6 +6,7 @@ exports.default = new forgescript_1.NativeFunction({
     name: '$playerElapsedTime',
     aliases: ["$elapsedTime"],
     description: 'Returns the elapsed time of the current song in milliseconds.',
+    version: "1.0.0",
     brackets: false,
     unwrap: true,
     args: [

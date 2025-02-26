@@ -5,6 +5,7 @@ const ForgeLink_1 = require("../../classes/structures/ForgeLink");
 exports.default = new forgescript_1.NativeFunction({
     name: '$skipExists',
     description: 'Check whether the next track exists in the player queue.',
+    version: "1.0.2",
     brackets: false,
     unwrap: true,
     args: [

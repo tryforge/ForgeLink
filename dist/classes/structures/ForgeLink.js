@@ -15,7 +15,7 @@ class ForgeLink extends forgescript_1.ForgeExtension {
     options;
     name = 'ForgeLink';
     description = '...';
-    version = '...';
+    version = '1.1.0-dev';
     #e = null;
     #kc;
     #sc;

@@ -2,14 +2,15 @@ import { Arg, ArgType, NativeFunction } from '@tryforge/forgescript'
 import type { BaseChannel, VoiceBasedChannel } from 'discord.js'
 import { ForgeLink } from '@structures/ForgeLink'
 
+
 export default new NativeFunction({
-    name: '$clearQueue',
-    description: 'Clears the queue/all tracks from the guild player',
-    version: "1.0.0",
+    name: '$getVolume',
+    description: 'gets the guild player volume/loudness',
+    version: "1.0.3",
     brackets: false,
     unwrap: true,
     args: [
-        Arg.requiredGuild('Guild ID', 'The ID of the guild '),
+        Arg.requiredGuild('Guild ID', 'The ID of the guild')
     ],
     output: ArgType.String,
     execute: async function(ctx, [guild = ctx.guild]) {
@@ -19,8 +20,7 @@ export default new NativeFunction({
 if (!player) return this.customError("No player found!");
 
 
-            player.queue.clear();
-        
-        return this.success();
+
+return this.success(player.volume);
     }
 })

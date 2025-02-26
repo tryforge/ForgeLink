@@ -5,6 +5,7 @@ import { ForgeLink } from '@structures/ForgeLink'
 export default new NativeFunction({
     name: '$getNodes',
     description: 'Gets the lavalink nodes.',
+    version: "1.0.2",
     brackets: false,
     unwrap: true,
     experimental:true,

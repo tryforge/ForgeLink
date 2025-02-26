@@ -5,6 +5,7 @@ const ForgeLink_1 = require("../../classes/structures/ForgeLink");
 exports.default = new forgescript_1.NativeFunction({
     name: '$removeTrack',
     description: 'Removes a track from the guild player',
+    version: "1.0.0",
     brackets: true,
     unwrap: true,
     args: [

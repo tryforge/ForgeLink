@@ -6,6 +6,7 @@ import { KazagumoQueue, KazagumoTrack } from 'kazagumo'
 export default new NativeFunction({
     name: '$queue',
     description: 'displays the queue/all tracks from the guild player',
+    version: "1.0.3",
     brackets: false,
     unwrap: true,
     args: [

@@ -5,6 +5,7 @@ const ForgeLink_1 = require("../../classes/structures/ForgeLink");
 exports.default = new forgescript_1.NativeFunction({
     name: '$searchTrack',
     description: 'Searches for tracks in the guild and returns results.',
+    version: "1.0.3",
     brackets: true,
     unwrap: true,
     args: [

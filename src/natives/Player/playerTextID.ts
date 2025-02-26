@@ -5,6 +5,7 @@ import { ForgeLink } from '@structures/ForgeLink'
 export default new NativeFunction({
     name: '$playerTextID',
     description: 'gets the players text channel id.',
+    version: "1.0.0",
     brackets: false,
     unwrap: true,
     args: [

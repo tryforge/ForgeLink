@@ -4,6 +4,7 @@ import { ForgeLink } from '@structures/ForgeLink';
 export default new NativeFunction({
     name: '$removeNode',
     description: 'removes a Lavalink node.',
+    version: "1.0.2",
     brackets: true,
     unwrap: true,
     args: [

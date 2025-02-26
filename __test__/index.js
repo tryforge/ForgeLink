@@ -1,6 +1,6 @@
 const { ForgeClient } = require('@tryforge/forgescript')
 const { ForgeLink } = require('../dist')
-process.loadEnvFile()
+
 
 const lavalink = new ForgeLink({
     events: {
@@ -12,11 +12,11 @@ const lavalink = new ForgeLink({
     },
     nodes: [
         {
-            name: 'INZEWORLD.COM (DE)',
-            auth: 'saher.inzeworld.com',
-            url: 'lava.inzeworld.com:3128',
+            name: 'Muzykant v4',
+            auth: 'https://discord.gg/v6sdrD9kPh',
+            url: 'lavalink_v4.muzykant.xyz:80',
             secure: false
-        }
+            }
     ]
 })
 
@@ -65,4 +65,4 @@ lavalink.commands.shoukaku.add({
     code: '$log[NODE "$env[name]" IS READY]'
 })
 
-client.login(process.env.TOKEN)
+client.login("MTM0MDMyNjM5NDQ2NjQwNjQ1MA.GOmPhC.Msd-tsylivFpkwHktqifJKoqJrpF_agnqxDtfQ")

@@ -5,6 +5,7 @@ const ForgeLink_1 = require("../../classes/structures/ForgeLink");
 exports.default = new forgescript_1.NativeFunction({
     name: '$hasPlayer',
     description: 'Check whether the given guild has a player created.',
+    version: "1.0.0",
     brackets: false,
     unwrap: true,
     args: [

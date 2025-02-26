@@ -6,6 +6,7 @@ import { ForgeLink } from '@structures/ForgeLink'
 export default new NativeFunction({
     name: '$previousTrack',
     description: 'Goes to a previous track in the queue (if one exists)',
+    version: "1.0.0",
     brackets: false,
     unwrap: true,
     args: [

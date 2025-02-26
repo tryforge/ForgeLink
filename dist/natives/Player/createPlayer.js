@@ -5,6 +5,7 @@ const ForgeLink_1 = require("../../classes/structures/ForgeLink");
 exports.default = new forgescript_1.NativeFunction({
     name: '$createPlayer',
     description: 'Creates a new music player in the given guild.',
+    version: "1.0.0",
     brackets: true,
     unwrap: true,
     args: [

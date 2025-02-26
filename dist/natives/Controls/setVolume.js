@@ -5,6 +5,7 @@ const ForgeLink_1 = require("../../classes/structures/ForgeLink");
 exports.default = new forgescript_1.NativeFunction({
     name: '$setVolume',
     description: 'Sets the guild player volume/loudness (recomended limit:200) ',
+    version: "1.0.1",
     brackets: true,
     unwrap: true,
     args: [
