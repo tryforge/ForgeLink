@@ -65,4 +65,4 @@ lavalink.commands.shoukaku.add({
     code: '$log[NODE "$env[name]" IS READY]'
 })
 
-client.login("MTM0MDMyNjM5NDQ2NjQwNjQ1MA.GOmPhC.Msd-tsylivFpkwHktqifJKoqJrpF_agnqxDtfQ")
+client.login("")
