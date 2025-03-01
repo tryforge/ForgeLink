@@ -12,9 +12,9 @@ const lavalink = new ForgeLink({
     },
     nodes: [
         {
-            name: 'Muzykant v4',
-            auth: 'https://discord.gg/v6sdrD9kPh',
-            url: 'lavalink_v4.muzykant.xyz:80',
+            name: 'Public Node',
+            auth: 'youshallnotpass',
+            url: 'lavalink.jirayu.net:13592',
             secure: false
             }
     ]

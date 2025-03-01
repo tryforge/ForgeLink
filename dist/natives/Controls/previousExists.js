@@ -17,7 +17,9 @@ exports.default = new forgescript_1.NativeFunction({
         const player = kazagumo.getPlayer((guild.id ?? ctx.guild.id));
         if (!player)
             return this.customError("No player found!");
-        const hasPrevious = player.queue.previous !== null;
-        return this.success(hasPrevious);
+        const hasPrevious = player.queue.previous?.[0];
+        const currentTrack = player.queue.current;
+        const isValid = !!(hasPrevious && currentTrack && hasPrevious.uri !== currentTrack.uri);
+        return this.success(isValid);
     }
 });

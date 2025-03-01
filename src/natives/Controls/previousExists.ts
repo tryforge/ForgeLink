@@ -18,7 +18,11 @@ export default new NativeFunction({
         if (!player) return this.customError("No player found!");
 
         
-        const hasPrevious = player.queue.previous !== null;
-        return this.success(hasPrevious);
+        const hasPrevious = player.queue.previous?.[0];
+        const currentTrack = player.queue.current;
+
+        const isValid = !!(hasPrevious && currentTrack && hasPrevious.uri !== currentTrack.uri);
+
+        return this.success(isValid);
     }
 });
