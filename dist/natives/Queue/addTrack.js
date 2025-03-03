@@ -18,7 +18,7 @@ exports.default = new forgescript_1.NativeFunction({
         const player = kazagumo.getPlayer((guild.id ?? ctx.guild.id));
         if (!player)
             return this.customError("No player found!");
-        const result = await kazagumo.search(query);
+        const result = await kazagumo.search(query, { requester: ctx.message.author });
         if (!result.tracks.length)
             return this.customError("No results found!");
         if (result.type === "PLAYLIST")
@@ -27,6 +27,7 @@ exports.default = new forgescript_1.NativeFunction({
             player.queue.add(result.tracks[0]);
         if (!player.playing && !player.paused)
             player.play();
+        const requester = result.tracks[0].requester;
         return this.successJSON({
             status: "success",
             type: result.type,
@@ -37,7 +38,8 @@ exports.default = new forgescript_1.NativeFunction({
             trackCount: result.type === "PLAYLIST" ? result.tracks.length : 1,
             trackTitle: result.type !== "PLAYLIST" ? result.tracks[0].title : null,
             trackAuthor: result.type !== "PLAYLIST" ? result.tracks[0].author : null,
-            trackImage: result.tracks[0].thumbnail
+            trackImage: result.tracks[0].thumbnail,
+            requester: requester.id
         });
     }
 });

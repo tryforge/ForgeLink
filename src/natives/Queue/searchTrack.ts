@@ -10,6 +10,7 @@ export default new NativeFunction({
     args: [
         Arg.requiredGuild('Guild ID', 'The ID of the guild to search in.'),
         Arg.requiredString('Query', 'The search query.'),
+
         Arg.optionalNumber('Limit', 'The maximum number of results to return.')
     ],
     output: ArgType.Json,
@@ -18,13 +19,17 @@ export default new NativeFunction({
 
         if (!kazagumo) return this.customError("Kazagumo is not initialized.");
 
-        
+        const player = kazagumo.getPlayer(guild.id ?? ctx.guild.id);
+        if (!player) return this.customError("No player found!");
 
-        const result = await kazagumo.search(query,);
+        const result = await kazagumo.search(query, {
+            requester: ctx.member.id, 
+        });
+
         if (!result.tracks.length) return this.customError("No results found!");
 
         let tracks = result.tracks;
-        if (limit && limit > 0) tracks = tracks.slice(0, limit); // Apply limit if provided
+        if (limit && limit > 0) tracks = tracks.slice(0, limit); 
 
         return this.successJSON({
             status: "success",
@@ -33,6 +38,7 @@ export default new NativeFunction({
                 ? `Found ${tracks.length} tracks from ${result.playlistName}`
                 : `Found ${tracks.length} tracks matching the query.`,
             playlistName: result.type === "PLAYLIST" ? result.playlistName : null,
+            requester: result.tracks[0].requester,
             trackCount: tracks.length,
             tracks: tracks.map(track => ({
                 title: track.title,

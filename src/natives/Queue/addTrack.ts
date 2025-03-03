@@ -1,6 +1,7 @@
 import { Arg, ArgType, NativeFunction } from '@tryforge/forgescript'
 import type { BaseChannel, VoiceBasedChannel } from 'discord.js'
 import { ForgeLink } from '@structures/ForgeLink'
+import { User } from 'discord.js';
 
 export default new NativeFunction({
     name: '$addTrack',
@@ -19,7 +20,7 @@ export default new NativeFunction({
         const player = kazagumo.getPlayer((guild.id ?? ctx.guild.id))
         if (!player) return this.customError("No player found!")
 
-        const result = await kazagumo.search(query)
+        const result = await kazagumo.search(query, {requester: ctx.message.author })
 
         if (!result.tracks.length) return this.customError("No results found!")
 
@@ -29,6 +30,8 @@ export default new NativeFunction({
 
         if (!player.playing && !player.paused) player.play();
         
+        const requester = result.tracks[0].requester as User;
+
         return this.successJSON({
 
                 status: "success",
@@ -40,7 +43,8 @@ export default new NativeFunction({
         trackCount: result.type === "PLAYLIST" ? result.tracks.length : 1,
         trackTitle: result.type !== "PLAYLIST" ? result.tracks[0].title : null,
         trackAuthor: result.type !== "PLAYLIST" ? result.tracks[0].author : null,
-        trackImage: result.tracks[0].thumbnail 
+        trackImage: result.tracks[0].thumbnail,
+        requester: requester.id
     });
     }
 })
