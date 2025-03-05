@@ -18,7 +18,7 @@ exports.default = new forgescript_1.NativeFunction({
         const player = kazagumo.getPlayer((guild.id ?? ctx.guild.id));
         if (!player)
             return this.customError("No player found!");
-        const result = await kazagumo.search(query, { requester: ctx.message.author });
+        const result = await kazagumo.search(query, { requester: ctx.member });
         if (!result.tracks.length)
             return this.customError("No results found!");
         if (result.type === "PLAYLIST")
