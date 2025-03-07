@@ -8,19 +8,15 @@ export default new NativeFunction({
     brackets: true,
     unwrap: true,
     args: [
-        Arg.requiredGuild('Guild ID', 'The ID of the guild to search in.'),
         Arg.requiredString('Query', 'The search query.'),
 
         Arg.optionalNumber('Limit', 'The maximum number of results to return.')
     ],
     output: ArgType.Json,
-    execute: async function(ctx, [guild = ctx.guild, query, limit]) {
+    execute: async function(ctx, [query, limit]) {
         const kazagumo = ctx.client.getExtension(ForgeLink, true).kazagumo;
 
         if (!kazagumo) return this.customError("Kazagumo is not initialized.");
-
-        const player = kazagumo.getPlayer(guild.id ?? ctx.guild.id);
-        if (!player) return this.customError("No player found!");
 
         const result = await kazagumo.search(query, {
             requester: ctx.member.id, 
