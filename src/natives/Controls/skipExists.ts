@@ -17,7 +17,7 @@ export default new NativeFunction({
         const player = kazagumo.getPlayer((guild.id ?? ctx.guild.id)); 
         if (!player) return this.customError("No player found!");
 
-        const hasNext = player.queue.length > 1;
+        const hasNext = player.queue.length >= 1;
         return this.success(hasNext);
     }
 });
