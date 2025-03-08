@@ -23,7 +23,8 @@ exports.default = new forgescript_1.NativeFunction({
                 trackSource: player.queue.current.sourceName,
                 trackTitle: player.queue.current.title,
                 trackAuthor: player.queue.current.author,
-                trackUri: player.queue.current.uri
+                trackUri: player.queue.current.uri,
+                length: player.queue.current.length
             });
         }
         // Get the rest of the queued tracks
@@ -35,7 +36,8 @@ exports.default = new forgescript_1.NativeFunction({
                     trackSource: track.sourceName,
                     trackTitle: track.title,
                     trackAuthor: track.author,
-                    trackUri: track.uri
+                    trackUri: track.uri,
+                    length: track.length
                 });
             }
         }

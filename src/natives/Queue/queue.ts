@@ -30,7 +30,8 @@ if (!player) return this.customError("No player found!");
                 trackSource: player.queue.current.sourceName,
                 trackTitle: player.queue.current.title,
                 trackAuthor: player.queue.current.author,
-                trackUri: player.queue.current.uri
+                trackUri: player.queue.current.uri,
+                length: player.queue.current.length
             });
         }
 
@@ -43,7 +44,8 @@ if (!player) return this.customError("No player found!");
                     trackSource: track.sourceName,
                     trackTitle: track.title,
                     trackAuthor: track.author,
-                    trackUri: track.uri
+                    trackUri: track.uri,
+                    length: track.length
                 });
             }
         }
