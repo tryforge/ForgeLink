@@ -1,147 +1,190 @@
-<img src="https://i.imgur.com/Ew9MXaP.jpeg" align="right" height=100 alt="isologo" />
+---
 
-# ForgeLink
-Music made stronger with Lavalink for [ForgeScript](https://npmjs.com/package/@tryforge/forgescript).
+# ForgeLink  
+Music made stronger with Lavalink for [ForgeScript](https://npmjs.com/package/@tryforge/forgescript).  
 
-<a href="https://github.com/tryforge/ForgeDB/"><img src="https://img.shields.io/github/package-json/v/tryforge/ForgeLink/main?label=@tryforge/forge.link&color=5c16d4" alt="@tryforge/forge.link"></a>
-<a href="https://github.com/tryforge/ForgeScript/"><img src="https://img.shields.io/github/package-json/v/tryforge/ForgeScript/main?label=@tryforge/forgescript&color=5c16d4" alt="@tryforge/forgescript"></a>
-<a href="https://discord.gg/hcJgjzPvqb"><img src="https://img.shields.io/discord/739934735387721768?logo=discord" alt="Discord"></a>
+[![NPM Version](https://img.shields.io/github/package-json/v/tryforge/ForgeLink/main?label=@tryforge/forge.link&color=5c16d4)](https://github.com/tryforge/ForgeLink)  
+[![ForgeScript](https://img.shields.io/github/package-json/v/tryforge/ForgeScript/main?label=@tryforge/forgescript&color=5c16d4)](https://github.com/tryforge/ForgeScript)  
+[![Discord](https://img.shields.io/discord/739934735387721768?logo=discord)](https://discord.gg/hcJgjzPvqb)  
 
------
-## Features
-- Easy to use functions.
-- Various amount of events.
-- Support for various filters. (SOON)
-- Support for all audio providers.
-- Support for playlists.
+---
 
-----
-## Contents
-1. [Installation](#installation)
-2. [Setup](#setup)
-    1. [Listening Events](#listening-events)
-        
-    2. [Commands](#commands)
-                    
-3. [lavalink initiation](#lavalink-initiation)
-4. [Tips](#tips)
-    1. [Default Search Engine](#default-search-engine)
-5. [Contributors](#contributors)
-----
-## Installation
+## Features  
+- Simple and easy-to-use functions  
+- Support for multiple event listeners  
+- Various filters support (Coming soon)  
+- Support for different audio providers  
+- Playlist support  
 
-> [!CAUTION]
-> ForgeLink is in no way compatible with ForgeMusic at the moment so please chose to use this if you know what you are doing and know how to use lavalink.
+---
 
+## Contents  
+1. [Installation](#installation)  
+2. [Setup](#setup)  
+    1. [Listening Events](#listening-events)  
+3. [Lavalink Configuration](#lavalink-configuration)  
+4. [Tips](#tips)  
+    1. [Default Search Engine](#default-search-engine)  
+5. [Contributors](#contributors)  
 
-In your project, navigate to your terminal and write the following command.
+---
+
+## Installation  
+
+> ⚠️ **Warning**  
+> ForgeLink is not compatible with ForgeMusic at the moment. Use it only if you understand Lavalink and its setup.  
+
+To install ForgeLink in your project, use:  
+
 ```bash
 npm install @tryforge/forge.link
-```
-If you are using another package manager than npm, Google how to install Node.js dependencies.
+```  
 
-----
-## Setup
-Now, you must require the `ForgeLink` class in your main file.
-```js
-const { ForgeLink } = require("@tryforge/forge.link");
-```
-As it is required, now you are allowed to create an instance of it.
-```js
-const lavalink = new ForgeLink({
-    events: {}
-});
-```
-Now, extension is defined and ready to be attached to the client.
-```js
-const client = new ForgeClient({
-    extensions: [lavalink],
-    // ...client options
-});
-```
-> [!CAUTION]
-> Your `ForgeClient` instance requires the following intent in order for most ForgeLink functions to work: **GuildVoiceStates**.
-### Listening Events
-ForgeLink provides a simple interface to declare the events to listen to.
-First, we need to declare the `kazugomo` in our events.
-```js
-const lavalink = new ForgeLink({
-    events: {
-        kazagumo: [],
-    },
-});
-```
+If you're using a different package manager, look up how to install Node.js dependencies accordingly.  
 
-Now that you have done that you can parse events into ForgeLink without any issue
-```js
-const lavalink = new ForgeLink({
-    events: {
-        kazagumo: ['playerStart']
-    },
-});
-```
-Current setup must look like this.
-```js
-const { ForgeLink } = require("@tryforge/forge.link");
-const lavalink = new ForgeLink({
-    events: {
-        kazagumo: ['playerStart']
-    },
-});
+---
 
-const client = new ForgeClient({
-    extensions: [lavalink],
-    // ...client options
-});
-```
+## Setup  
 
-### Commands
-To add event commands, ForgeLink provides an integrated command manager to take care of this.
-You must define your commands after your ForgeClient definition to prevent errors.
+First, import `ForgeLink` and `ForgeClient` in your main file:  
+
 ```js
-// Adding directly.
-lavalink.commands.kazagumo.add({
-    name: "eventName",
-    code: "$log[A track started playing.]"
-});
-```
-## Lavalink Initiation
-When setting up forge link you must declare your lavalink server. there are a wide range of lavalink servers online. to declare your lavalink server modify your setup to include this
+const { ForgeClient } = require('@tryforge/forgescript');
+const { ForgeLink } = require('@tryforge/forge.link');
+```  
+
+Then, create a new instance of `ForgeLink` with event listeners and Lavalink nodes:  
 
 ```js
 const lavalink = new ForgeLink({
     events: {
         kazagumo: ['playerStart'],
+        shoukaku: ['debug', 'ready']
+    },
+    kazagumoOptions: {
+        defaultSearchEngine: 'youtube'
     },
     nodes: [
         {
-            name: 'INZEWORLD.COM (DE)',
-            auth: 'saher.inzeworld.com',
-            url: 'lava.inzeworld.com:3128',
+            name: 'Public Node',
+            auth: 'youshallnotpass',
+            url: 'lavalink.jirayu.net:13592',
             secure: false
         }
     ]
-})
-```
+});
+```  
 
-## Tips
-### Default Search Engine
-Lavalink includes various types of search engines pick one as follows
+Now, create the `ForgeClient` and attach `lavalink` as an extension:  
+
+```js
+const client = new ForgeClient({
+    intents: [
+        'Guilds',
+        'GuildMessages',
+        'MessageContent',
+        'GuildVoiceStates'
+    ],
+    events: [
+        'messageCreate'
+    ],
+    extensions: [lavalink],
+    prefixes: ['.']
+});
+```  
+
+> ⚠️ **Important**  
+> Ensure your `ForgeClient` has the `GuildVoiceStates` intent enabled for ForgeLink functions to work properly.  
+
+---
+
+## Listening Events  
+
+ForgeLink allows you to listen to specific Lavalink events. To do this, define them inside the `events` object:  
+
 ```js
 const lavalink = new ForgeLink({
-    // ...
-        kazagumoOptions: {
-        defaultSearchEngine: 'youtube'
-    },
+    events: {
+        kazagumo: ['playerStart'],
+        shoukaku: ['debug', 'ready']
+    }
 });
-```
+```  
 
-## Contributors
-Many Thanks to the people who made this possible! ❤️
+Then, you can add custom event handlers:  
 
-Special Thanks too [Cyberghost](https://github.com/Cyberghxst) for helping make the managers to make this work including event and command manager without him this would be impossible!
+```js
+lavalink.commands.kazagumo.add({
+    type: 'playerStart',
+    code: '$log[A track started playing now.]'
+});
 
-This package was made with ♥️ by [Econome](https://discord.com/users/838105973985771520)
+lavalink.commands.shoukaku.add(
+    {
+        type: 'debug',
+        code: '$log[NODE "$env[name]" -> $env[info]]'
+    },
+    {
+        type: 'ready',
+        code: '$log[NODE "$env[name]" IS READY]'
+    }
+);
+```  
 
-We Hope you enjoy using ForgeLink
-[![tryforge/ForgeLink](https://contrib.rocks/image?repo=tryforge/ForgeLink)](https://github.com/tryforge/ForgeLink)
+---
+
+## Lavalink Configuration  
+
+To connect ForgeLink to a Lavalink server, provide the `nodes` parameter in the setup:  
+
+```js
+const lavalink = new ForgeLink({
+    events: {
+        kazagumo: ['playerStart'],
+        shoukaku: ['debug', 'ready']
+    },
+    nodes: [
+        {
+            name: 'Public Node',
+            auth: 'youshallnotpass',
+            url: 'lavalink.jirayu.net:13592',
+            secure: false
+        }
+    ]
+});
+```  
+
+You can find public Lavalink nodes online or host your own.  
+
+---
+
+## Tips  
+
+### Default Search Engine  
+
+Lavalink supports multiple search engines. To specify a default, add it under `kazagumoOptions`:  
+
+```js
+const lavalink = new ForgeLink({
+    kazagumoOptions: {
+        defaultSearchEngine: 'youtube'
+    }
+});
+```  
+
+---
+
+## Contributors  
+
+Many thanks to everyone who contributed to this project! ❤️  
+
+Special thanks to [Cyberghost](https://github.com/Cyberghxst) for assisting with the event and command managers—without them, this wouldn’t have been possible!  
+
+This package was developed with ♥️ by [Econome](https://discord.com/users/838105973985771520).  
+
+We hope you enjoy using ForgeLink!  
+
+[![Contributors](https://contrib.rocks/image?repo=tryforge/ForgeLink)](https://github.com/tryforge/ForgeLink)  
+
+---
+
