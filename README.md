@@ -3,9 +3,9 @@
 # ForgeLink  
 Music made stronger with Lavalink for [ForgeScript](https://npmjs.com/package/@tryforge/forgescript).  
 
-[![NPM Version](https://img.shields.io/github/package-json/v/tryforge/ForgeLink/main?label=@tryforge/forge.link&color=5c16d4)](https://github.com/tryforge/ForgeLink)  
-[![ForgeScript](https://img.shields.io/github/package-json/v/tryforge/ForgeScript/main?label=@tryforge/forgescript&color=5c16d4)](https://github.com/tryforge/ForgeScript)  
-[![Discord](https://img.shields.io/discord/739934735387721768?logo=discord)](https://discord.gg/hcJgjzPvqb)  
+<a href="https://github.com/tryforge/ForgeLink/"><img src="https://img.shields.io/github/package-json/v/tryforge/ForgeLink/main?label=@tryforge/forge.link&color=5c16d4" alt="@tryforge/forge.link"></a>
+ <a href="https://github.com/tryforge/ForgeScript/"><img src="https://img.shields.io/github/package-json/v/tryforge/ForgeScript/main?label=@tryforge/forgescript&color=5c16d4" alt="@tryforge/forgescript"></a>
+ <a href="https://discord.gg/hcJgjzPvqb"><img src="https://img.shields.io/discord/739934735387721768?logo=discord" alt="Discord"></a>
 
 ---
 
@@ -31,6 +31,7 @@ Music made stronger with Lavalink for [ForgeScript](https://npmjs.com/package/@t
 
 ## Installation  
 
+> [!CAUTION]
 > ⚠️ **Warning**  
 > ForgeLink is not compatible with ForgeMusic at the moment. Use it only if you understand Lavalink and its setup.  
 
@@ -93,6 +94,7 @@ const client = new ForgeClient({
 });
 ```  
 
+>[!INFO]
 > ⚠️ **Important**  
 > Ensure your `ForgeClient` has the `GuildVoiceStates` intent enabled for ForgeLink functions to work properly.  
 
