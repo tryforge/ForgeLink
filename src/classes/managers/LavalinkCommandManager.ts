@@ -1,5 +1,5 @@
 import { BaseCommandManager } from '@tryforge/forgescript'
-import type { LavalinkManagerEvents } from 'lavalink-client'
+import type { LavalinkManagerEvents, NodeManagerEvents } from 'lavalink-client'
 
 
 export const handlerName = "ForgeLink"

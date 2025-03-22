@@ -10,7 +10,9 @@ import {
     Player,
     Track,
     StoredQueue,
-    UnresolvedTrack
+    UnresolvedTrack,
+    LyricsResult,
+    LyricsLine
 } from 'lavalink-client'
 import { LavalinkManager as CommandManager } from '@managers/LavalinkCommandManager'
 import { join } from 'path'
@@ -290,7 +292,8 @@ export class ForgeLink extends ForgeExtension {
         });
         
         FunctionManager.load('ForgeLink', join(__dirname, '../../natives'));
-        EventManager.load('lavalinkEvents', join(__dirname, '../../events'));
+        EventManager.load('lavalinkEvents', join(__dirname, '../../events/player'));
+        EventManager.load('lavalinkNodeEvents', join(__dirname, '../../events/node'));
         
         if (this.options.events?.player?.length) {
             for (const event of this.options.events.player) {
@@ -300,6 +303,7 @@ export class ForgeLink extends ForgeExtension {
             }
         }
         client.events.load('lavalinkEvents', this.options.events?.player ?? []);
+        client.events.load('lavalinkNodeEvents', this.options.events?.player ?? []);
     }
     
     get lavalink(): LavalinkManager | null {
