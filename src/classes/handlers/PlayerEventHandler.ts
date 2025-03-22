@@ -11,9 +11,18 @@ type LavalinkEventNames =
   | 'playerDestroy'
   | 'playerMove'
   | 'playerDisconnect'
-  | 'playerReconnect'
+  | 'playerUpdate'
+  | 'playerVoiceJoin'
+  | 'playerVoiceLeave'
   | 'debug'
-  | 'error';
+  | 'connect'
+  | 'disconnect'
+  | 'reconnecting'
+  | 'create'
+  | 'destroy'
+  | 'error'
+  | 'resumed'
+  ;
 
 export class LavalinkEventHandler<T extends LavalinkEventNames = LavalinkEventNames> extends BaseEventHandler<any, T> {
     register(client: ForgeClient): void {

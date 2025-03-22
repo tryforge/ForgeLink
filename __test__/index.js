@@ -1,23 +1,20 @@
 const { ForgeClient } = require('@tryforge/forgescript')
 const { ForgeLink } = require('../dist')
-process.loadEnvFile()
+
 
 const lavalink = new ForgeLink({
-
-    playerOptions: {
-    defaultSearchPlatform: "ytsearch"
-    },
-
-    nodes: [
+nodes: [
         {
-            "identifier": "Public Lavalink v4",
-            "password": "https://dsc.gg/ajidevserver",
-            "host": "lava-v4.ajieblogs.eu.org",
-            "port": 443,
-            "secure": true,
-            "sessionId": "Econome"
+            id: "Public Lavalink v4",
+            authorization: "https://dsc.gg/ajidevserver",
+            host: "lava-v4.ajieblogs.eu.org",
+            port: 443,
+            secure: true
           }
-    ]
+    ],
+    playerOptions: {
+        defaultSearchPlatform: "ytsearch"
+        }
 })
 
 const client = new ForgeClient({
@@ -41,4 +38,4 @@ client.commands.add({
 })
 
 
-client.login(process.env.TOKEN)
+client.login("")

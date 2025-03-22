@@ -86,11 +86,6 @@ class ForgeLink extends forgescript_1.ForgeExtension {
                     guild.shard.send(payload);
                 return Promise.resolve();
             },
-            // Client information
-            client: {
-                id: client.user.id,
-                username: client.user.username
-            },
             // Auto-skip options
             autoSkip: this.options.autoSkip ?? true,
             autoSkipOnResolveError: this.options.autoSkipOnResolveError ?? true,

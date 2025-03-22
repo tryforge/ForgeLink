@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const PlayerEventHandler_1 = require("../classes/handlers/PlayerEventHandler");
+const PlayerEventHandler_1 = require("../../classes/handlers/PlayerEventHandler");
 const forgescript_1 = require("@tryforge/forgescript");
-const ForgeLink_1 = require("../classes/structures/ForgeLink");
+const ForgeLink_1 = require("../../classes/structures/ForgeLink");
 exports.default = new PlayerEventHandler_1.LavalinkEventHandler({
     name: 'trackStart',
     description: '...',

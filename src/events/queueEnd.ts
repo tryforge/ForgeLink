@@ -3,10 +3,10 @@ import { Interpreter } from '@tryforge/forgescript'
 import { ForgeLink } from '@structures/ForgeLink'
 
 export default new LavalinkEventHandler({
-    name: 'trackStart',
+    name: 'queueEnd',
     description: '...',
     async listener(player, track, payload) {
-        const commands = this.getExtension(ForgeLink, true).commands.player.get("trackStart")
+        const commands = this.getExtension(ForgeLink, true).commands.player.get("queueEnd")
         if (!commands) return;
 
         const guild = this.guilds.cache.get(player.guildId)
